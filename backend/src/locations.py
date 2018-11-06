@@ -9,8 +9,9 @@ class Location:
         self.adjList = adjList
 
 class Hallway(Location):
-    def __init__(self, adjList, length):
+    def __init__(self, adjList, roomList, length):
         super().__init__(self, adjList)
+        self.roomList = roomList
         self.length = length
 
 class Elevator(Location):
