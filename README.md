@@ -12,5 +12,5 @@ Contains images of Stevenson Math building floor plans for use in creating appli
 ## Design folder
 Documentation for design choices.
 
-## travis.yml
+## .travis.yml
 Travis script to run tests with Travis CI.
