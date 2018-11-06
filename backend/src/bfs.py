@@ -6,11 +6,13 @@
 ##(which are hallways, stairs, elevators, etc) to find path from start to end
 ## location.
 
-# Import libraries
+## Import libraries
 import locations
 import queue # Queues for breadth first search
 
-# Class constants
+## Class constants
+# Each item in the queue is stored as a list with location at index
+# 0 of the list and the current route as index 1 of that list.
 LOCATION = 0
 ROUTE = 1
 
