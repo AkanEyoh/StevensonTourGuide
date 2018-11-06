@@ -8,6 +8,10 @@ class Location:
     def __init__(self, adjList):
         self.adjList = adjList
 
+    # adds the adjacency list to the locations
+    def add_list(adjList):
+        self.adjList = adjList
+
 class Hallway(Location):
     def __init__(self, adjList, roomList, length):
         super().__init__(self, adjList)
@@ -21,3 +25,6 @@ class Elevator(Location):
 class Staircase(Location):
     def __init__(self, adjList):
         super().__init__(self, adjList)
+
+
+floor_1 = Hallway()
