@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/AkanEyoh/StevensonTourGuide.svg?branch=master)](https://travis-ci.org/AkanEyoh/StevensonTourGuide)
+
 # Stevenson Tour Guide -- CSx278 Final Project
 An application that helps students find their way around Vanderbilt's most notoriously confusing building: Stevenson Center.
 
