@@ -1,8 +1,8 @@
 ## Author(s): Daniel Yan
 ## Date: 2018-11-08
 ## Email: daniel.yan@vanderbilt.edu
-## Filename: locations_test.py
-## Description: Tests for the src/data_loader.py which loads in data
+## Filename: data_loader_test.py
+## Description: Tests for src/data_loader.py which loads in data
 ## from the Vanderbilt Stevenson Math building.
 
 # Import libraries

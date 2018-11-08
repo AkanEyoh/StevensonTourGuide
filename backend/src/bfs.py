@@ -7,7 +7,7 @@
 ## location.
 
 ## Import libraries
-import locations
+from src import locations
 import queue # Queues for breadth first search
 
 ## Class constants
@@ -39,11 +39,11 @@ def bfs (start, end, queue=queue.Queue(), route=[], visited=set()):
         # Get the corresponding location and route for that item
         current_location = current_item[0]
         current_route = current_item[1]
-        # Add the current location to the new route
-        new_route = current_route.append(current_location)
+        # Add the current location to the route
+        current_route.append(current_location)
         # If the location is the end location, simply return the new route.
         if current_location == end:
-            return new_route
+            return current_route
         # Otherwise, get all the locations adjacent to the current location
         else:
             for location in current_location.adjList:
@@ -51,7 +51,7 @@ def bfs (start, end, queue=queue.Queue(), route=[], visited=set()):
                 # add them to the queue with the new route.
                 if location not in visited:
                     visited.add(location)
-                    queue.put([location, route])
+                    queue.put([location, current_route])
     # Return false if no location is found.
     return False
 
