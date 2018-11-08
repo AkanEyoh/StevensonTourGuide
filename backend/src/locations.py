@@ -1,4 +1,4 @@
-## Author(s): Akaninyene Eyoh
+## Author(s): Akaninyene Eyoh, Ulysses Yu
 ## Date: 2018-11-06
 ## Email: akaninyene.e.eyoh@vanderbilt.edu
 ## Filename: locations.py
