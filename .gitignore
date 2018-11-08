@@ -3,3 +3,7 @@ venv
 
 # Pycharm files
 .idea
+
+# Pytest files
+.pytest_cache
+__pycache__
