@@ -1,14 +1,15 @@
 ## Author(s): Akaninyene Eyoh, Ulysses Yu, Daniel Yan
 ## Date: 2018-11-06
-## Email: akaninyene.e.eyoh@vanderbilt.edu, daniel.yan@vanderbilt.edu
+## Email: akaninyene.e.eyoh@vanderbilt.edu, ulysses.l.yu@vanderbilt.edu, daniel.yan@vanderbilt.edu
 ## Filename: locations.py
 ## Description: Implements node structure of Stevenson hallways, stairs, and elevators.
 
 # defines a parent class for location
 # this stores an adjacency list and provides a mechanism for accessing them
 class Location:
-    def __init__(self, adjList=[]):
+    def __init__(self, adjList=[], id=""):
         self.adjList = adjList
+        self.id = id
         print(self.adjList)
 
     # adds the adjacency list to the locations
@@ -17,6 +18,9 @@ class Location:
 
     def get_adj_list(self):
         return self.adjList
+
+    def to_string(self):
+        return self.id
 
 # defines a hallway class that extends Location
 # this stores an adjacency list, room list, and the length of the hallway
