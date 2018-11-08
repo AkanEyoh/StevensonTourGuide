@@ -65,7 +65,7 @@ staircase3_1.adjList = [hallway3_1, staircase2_1, staircase4_1]
 hallway3_1 = Hallway()
 hallway3_1.roomList = ["1322", "1323", "1324", "1326", "1326A", "1326B", "1326C", "1326D", "1326E", "1326F", "1326G"]
 hallway3_1.adjList = [staircase3_1, elevator3, hallway3_2]
-hallway3_1.length = 2
+hallway3_1.length = 11
 
 elevator3 = Elevator()
 elevator3.adjList = [hallway3_1, hallway3_2, elevator1, elevator2, elevator4, elevator5]
@@ -73,7 +73,7 @@ elevator3.adjList = [hallway3_1, hallway3_2, elevator1, elevator2, elevator4, el
 hallway3_2 = Hallway()
 hallway3_2.roomList = ["1307", "1308", "1309", "1310", "1312", "1313"]
 hallway3_2.adjList = [staircase3_2, elevator3, hallway3_1]
-hallway3_2.length = 5
+hallway3_2.length = 6
 
 staircase3_2 = Staircase()
 staircase3_2.adjList = [hallway3_2, staircase4_2]
@@ -85,7 +85,7 @@ staircase4_1.adjList = [hallway4_1, staircase3_1, staircase5_1]
 hallway4_1 = Hallway()
 hallway4_1.roomList = ["1422", "1424", "1425", "1426", "1427", "1428", "1431", "1432"]
 hallway4_1.adjList = [staircase4_1, elevator4, hallway4_2]
-hallway4_1.length = 3
+hallway4_1.length = 8
 
 elevator4 = Elevator()
 elevator4.adjList = [hallway4_1, hallway4_2, elevator1, elevator2, elevator3, elevator5]
@@ -94,7 +94,7 @@ hallway4_2 = Hallway()
 hallway4_2.roomList = ["1401", "1403", "1404", "1405", "1407", "1408", "1410", "1411", "1412", "1413", "1414", "1415",
                        "1416", "1418", "1419", "1420"]
 hallway4_2.adjList = [staircase4_2, elevator4, hallway4_1]
-hallway4_2.length = 7
+hallway4_2.length = 16
 
 staircase4_2 = Staircase()
 staircase4_2.adjList = [hallway4_2, staircase3_2, staircase5_2]
@@ -106,7 +106,7 @@ staircase5_1.adjList = [hallway5_1, staircase4_1]
 hallway5_1 = Hallway()
 hallway5_1.roomList = ["1523", "1524", "1525", "1526", "1527", "1528", "1529", "1531", "1532", "1533"]
 hallway5_1.adjList = [staircase5_1, elevator5, hallway5_2]
-hallway5_1.length = 6
+hallway5_1.length = 10
 
 elevator5 = Elevator()
 elevator5.adjList = [hallway5_1, hallway5_2, elevator1, elevator2, elevator3, elevator4]
@@ -115,7 +115,7 @@ hallway5_2 = Hallway()
 hallway5_2.roomList = ["1502", "1503", "1504", "1505", "1507", "1510", "1511", "1512", "1513", "1514", "1515", "1516",
                        "1518", "1520", "1522"]
 hallway5_2.adjList = [staircase5_2, elevator5, hallway5_1]
-hallway5_2.length = 8
+hallway5_2.length = 15
 
 staircase5_2 = Staircase()
 staircase5_2.adjList = [hallway5_2, staircase4_2]
