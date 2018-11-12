@@ -15,11 +15,21 @@ def test_staircase_init_1():
     tester = locations.Staircase(adj_list)
     assert tester.get_adj_list() == adj_list
 
+def test_staircase_init_2():
+    adj_list = ["element1", "element2", "element3"]
+    tester = locations.Staircase(adj_list)
+    assert tester.length == 1
+
 # Test for initialization of elevator class.
 def test_elevator_init_1():
     adj_list = ["element1", "element2", "element3", "element4"]
     tester2 = locations.Elevator(adj_list)
     assert tester2.get_adj_list() == adj_list
+
+def test_elevator_init_2():
+    adj_list = ["element1", "element2", "element3", "element4"]
+    tester2 = locations.Elevator(adj_list)
+    assert tester2.length == 1.1
 
 # Test for initialization of hallway class and adj_list.
 def test_hallway_init_1():
