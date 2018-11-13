@@ -10,6 +10,9 @@ from src import data_loader as dl
 from src import locations
 import pytest
 
+# Constants
+GRAPH_NODES = 25 # Number of locations in the graph representation of Stevenson.
+
 
 ##########################
 ## Tests for staircases ##
@@ -91,5 +94,14 @@ def test_hallway_2():
 ############################
 ## Tests for entire graph ##
 ############################
+# Test that number of locations is correct
 def test_graph_1():
-    assert len(dl.stevenson_math) == 25
+    assert len(dl.graph) == GRAPH_NODES
+
+# Check that one of the hallways is in the graph
+def test_graph_2():
+    assert dl.hallway5_2 in dl.graph
+
+# Check that a newly created elevator should not be in the graph
+def test_graph_3():
+    assert locations.Elevator() != dl.graph
