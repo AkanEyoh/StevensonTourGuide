@@ -7,10 +7,10 @@
 # defines a parent class for location
 # this stores an adjacency list and provides a mechanism for accessing them
 class Location:
-    def __init__(self, adjList=[], id_name=""):
+    def __init__(self, adjList=[], id="", length = 1):
         self.adjList = adjList
-        self.id_name = id_name
-        print(self.adjList)
+        self.id = id
+        self.length = length
 
     # adds the adjacency list to the locations
     def set_adj_list(self, adjList):
@@ -46,12 +46,14 @@ class Hallway(Location):
 
 # this defines an elevator class
 # the elevator does not have rooms attached to it
+# default length set to 1.1 so that stairs are preferred
 class Elevator(Location):
-    def __init__(self, adjList=[]):
-        super().__init__(adjList)
+    def __init__(self, adjList=[], length=1.1):
+        super().__init__(adjList=adjList, length=length)
 
 # this defines a staircase class
 # the staircase does not have rooms attached to it
+# default length set to 1
 class Staircase(Location):
-    def __init__(self, adjList=[]):
-        super().__init__(adjList)
+    def __init__(self, adjList=[], length=1):
+        super().__init__(adjList=adjList, length=length)

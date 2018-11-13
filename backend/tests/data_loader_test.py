@@ -1,8 +1,8 @@
 ## Author(s): Daniel Yan
 ## Date: 2018-11-08
 ## Email: daniel.yan@vanderbilt.edu
-## Filename: locations_test.py
-## Description: Tests for the src/data_loader.py which loads in data
+## Filename: data_loader_test.py
+## Description: Tests for src/data_loader.py which loads in data
 ## from the Vanderbilt Stevenson Math building.
 
 # Import libraries
@@ -29,7 +29,6 @@ def test_staircase_2():
 def test_staircase_3():
     assert isinstance(dl.staircase5_2, locations.Location)
 
-
 # Test that a getting a hallway from the adj_list of a staircase works
 # correctly.
 def test_staircase_4():
@@ -50,6 +49,9 @@ def test_staircase_6():
                                           "1513", "1514", "1515", "1516",
                                           "1518", "1520", "1522"]
 
+# Test that a staircase has length of 1.
+def test_staircase_7():
+    assert dl.staircase2_2.length == 1
 
 # Test that we can chain a second step from the hallway adjacent to a staircase
 # to another elevator.
@@ -84,3 +86,10 @@ def test_hallway_1():
 # Check that hallway is an instance of a Location object.
 def test_hallway_2():
     assert isinstance(dl.hallway2_2, locations.Location)
+
+
+############################
+## Tests for entire graph ##
+############################
+def test_graph_1():
+    assert len(dl.stevenson_math) == 25
