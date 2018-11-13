@@ -20,65 +20,65 @@
 ## Determining length of hallway was relative to how many classrooms were in
 # 1 hallway.
 
-from src import locations
+import locations
 
 #########################
 ## Initialize Locations##
 #########################
-## Floor 1 Locations
-staircase1_1 = locations.Staircase()
+## Floor 1 Locations 
+staircase1_1 = locations.Staircase(id_name="staircase1-2")
 
-hallway1_1 = locations.Hallway()
+hallway1_1 = locations.Hallway(id_name="hallway1-1")
 
-elevator1 = locations.Elevator()
+elevator1 = locations.Elevator(id_name="elevator1")
 
-hallway1_2 = locations.Hallway()
+hallway1_2 = locations.Hallway(id_name="hallway1-2")
 
-staircase1_2 = locations.Staircase()
+staircase1_2 = locations.Staircase(id_name="staircase1-2")
 
 ## Floor 2 Locations
-staircase2_1 = locations.Staircase()
+staircase2_1 = locations.Staircase(id_name="staircase2-1")
 
-hallway2_1 = locations.Hallway()
-elevator2 = locations.Elevator()
+hallway2_1 = locations.Hallway(id_name="hallway2-1")
+elevator2 = locations.Elevator(id_name="elevator2")
 
 # back area that leads outside
-hallway2_2 = locations.Hallway()
+hallway2_2 = locations.Hallway(id_name="hallway2-2")
 
-staircase2_2 = locations.Staircase()
+staircase2_2 = locations.Staircase(id_name="staircase2-2")
 
 # Floor 3 Locations
-staircase3_1 = locations.Staircase()
+staircase3_1 = locations.Staircase(id_name="staircase3-1")
 
-hallway3_1 = locations.Hallway()
+hallway3_1 = locations.Hallway(id_name="hallway3-1")
 
-elevator3 = locations.Elevator()
+elevator3 = locations.Elevator(id_name="elevator3")
 
-hallway3_2 = locations.Hallway()
+hallway3_2 = locations.Hallway(id_name="hallway3-2")
 
-staircase3_2 = locations.Staircase()
+staircase3_2 = locations.Staircase(id_name="staircase3-2")
 
 # Floor 4 Locations
-staircase4_1 = locations.Staircase()
+staircase4_1 = locations.Staircase(id_name="staircase4-1")
 
-hallway4_1 = locations.Hallway()
+hallway4_1 = locations.Hallway(id_name="hallway4-1")
 
-elevator4 = locations.Elevator()
+elevator4 = locations.Elevator(id_name="elevator4")
 
-hallway4_2 = locations.Hallway()
+hallway4_2 = locations.Hallway(id_name="hallway4-2")
 
-staircase4_2 = locations.Staircase()
+staircase4_2 = locations.Staircase(id_name="staircase4-2")
 
 # Floor 5 Locations
-staircase5_1 = locations.Staircase()
+staircase5_1 = locations.Staircase(id_name="staircase5-1")
 
-hallway5_1 = locations.Hallway()
+hallway5_1 = locations.Hallway(id_name="hallway5-1")
 
-elevator5 = locations.Elevator()
+elevator5 = locations.Elevator(id_name="elevator5")
 
-hallway5_2 = locations.Hallway()
+hallway5_2 = locations.Hallway(id_name="hallway5-2")
 
-staircase5_2 = locations.Staircase()
+staircase5_2 = locations.Staircase(id_name="staircase5-2")
 
 ##################################
 ## Set attributes for locations.##
