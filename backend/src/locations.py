@@ -20,7 +20,7 @@ class Location:
         return self.adjList
 
     def to_string(self):
-        return self.id
+        return self.id_name_name
 
 # defines a hallway class that extends Location
 # this stores an adjacency list, room list, and the length of the hallway
