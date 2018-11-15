@@ -58,7 +58,7 @@ def test_staircase_7():
 
 # Test that we can chain a second step from the hallway adjacent to a staircase
 # to another elevator.
-def test_staircase_7():
+def test_staircase_8():
     hallway5_2 = dl.staircase5_2.get_adj_list()[0]
     elevator5 = hallway5_2.get_adj_list()[1]
     assert elevator5.get_adj_list() == [dl.hallway5_1, dl.hallway5_2,

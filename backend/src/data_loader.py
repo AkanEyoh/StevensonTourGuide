@@ -20,7 +20,7 @@
 ## Determining length of hallway was relative to how many classrooms were in
 # 1 hallway.
 
-import locations
+from src import locations
 
 #########################
 ## Initialize Locations##

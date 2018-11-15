@@ -9,7 +9,7 @@ from src import bfs
 from src import locations
 from src import data_loader
 
-def if __name__ == '__main__':
+def if __name__== '__main__':
     start_room = input("Hello User. Welcome to Steveson Tour Guide. Today, I will help you find your classroom. Which room in " \
           "Stevenson are you currently located?")
     type(start_room)
