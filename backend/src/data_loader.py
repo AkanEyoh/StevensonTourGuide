@@ -176,9 +176,9 @@ staircase5_2.adjList = [hallway5_2, staircase4_2]
 # Stevenson math building.
 stevenson_math = [staircase1_1, staircase1_2, staircase2_1, staircase2_2,
                   staircase3_1, staircase3_2, staircase4_1, staircase4_2,
-                  staircase5_1, staircase5_2, elevator1, elevator2,
-                  elevator3, elevator4, elevator5, hallway1_1, hallway1_2,
-                  hallway2_1, hallway2_2, hallway3_1, hallway3_2, hallway4_1,
-                  hallway4_2, hallway5_1, hallway5_2]
+                  staircase5_1, staircase5_2, elevator1, elevator2, elevator3,
+                  elevator4, elevator5, hallway1_1, hallway1_2, hallway2_1,
+                  hallway2_2, hallway3_1, hallway3_2, hallway4_1, hallway4_2,
+                  hallway5_1, hallway5_2]
 
 graph = stevenson_math

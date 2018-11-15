@@ -81,33 +81,3 @@ def shortest_path(graph, start):
 
     # Return map of paths
     return paths
-
-
-# def get_unvisited(graph):
-#     """
-#     Get a set of all nodes in a graph.
-#     :param graph: List of location objects representing a graph.
-#     :return: Set of all location objects in the graph.
-#     """
-#     return set(location for location in graph)
-
-#
-# def create_priority_queue(graph, start, distances):
-#     """
-#     Return a priority queue with all locations in the graph set with a
-#     priority that corresponds to the map in distances.
-#     :param graph: List of locations representing a graph.
-#     :param start: Start location that should have priority set to 0.
-#     :param distances: Dictionary mapping the locations to the distances from
-#     start.
-#     :return: A priority queue object with tuples such that all locations have
-#     priority infinity except for the start location.
-#     """
-#     pqueue = queue.PriorityQueue()
-#     # Add all locations except for the start location
-#     for location in graph:
-#         # Create tuple containing distance as priority and the location
-#         tuple = (distances[location], location)
-#         # Add the tuple to the priority queue
-#         pqueue.put(distances[location])
-#     return pqueue
