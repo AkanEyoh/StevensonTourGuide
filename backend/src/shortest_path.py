@@ -72,7 +72,15 @@ def shortest_path(graph, start):
                 # Set minimum path to the new path
                 paths[location] = new_path
 
+        # Get the new minimum length and node for next iteration of algorithm
+        min_len = INFINITY
+        for location in unvisited:
+            if distances[location] < min_len:
+                min_len = distances[location]
+                min_node = location
 
+    # Return map of paths
+    return paths
 
 
 # def get_unvisited(graph):
