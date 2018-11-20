@@ -7,6 +7,7 @@
 
 ## Libraries to import
 from src import data_loader as dl
+from src import locations as loc
 from src import shortest_path as sp
 import pytest
 
@@ -52,14 +53,12 @@ def test_shortest_path_3():
     # Check that the path to hallway3_1 is just the hallway itself.
     assert paths[dl.hallway3_1] == [dl.hallway3_1]
 
-# Check that a a start location that is not in the graph will yield a list of
-# empty paths.
-def test_shortest_path_3():
+# Check that a a start location that is not in the graph will return false.
+def test_shortest_path_4():
     # Get the graph from the data loader for Stevenson
     graph = dl.graph
-    # Get the start location as hallway3_1
-    start = dl.hallway3_1
-    # Get the map for shortest paths for hallway3_1 using shortest path
-    paths = sp.shortest_path(graph=graph, start=start)
-    # Check that the path to hallway3_1 is just the hallway itself.
-    assert paths[dl.hallway3_1] == [dl.hallway3_1]
+    # Get the start location as another location
+    start = loc.Hallway()
+    # Assert that there are no shortest path for the start location since it
+    # is not in the graph
+    assert sp.shortest_path(graph=graph, start=start) == False

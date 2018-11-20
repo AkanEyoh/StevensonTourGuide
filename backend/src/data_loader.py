@@ -182,3 +182,6 @@ stevenson_math = [staircase1_1, staircase1_2, staircase2_1, staircase2_2,
                   hallway5_1, hallway5_2]
 
 graph = stevenson_math
+
+# Create set containing all locations in the graph
+locations_set = set(graph)

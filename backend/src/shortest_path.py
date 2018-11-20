@@ -5,15 +5,11 @@
 ## Description: Implements Dijkstra's shortest path to find the shortest path
 ## from each location to any other location.
 
-## Import statements
-import queue  # Priority queue
-import heapq
-from src import data_loader as dl
-from src import locations as loc
-
 ## Constants
 INFINITY = 999999  # Placeholder to initialize distances to "infinity"
 
+# Import libraries
+from src import data_loader as dl
 
 def shortest_path(graph, start):
     """
@@ -25,22 +21,27 @@ def shortest_path(graph, start):
     :return: Dictionary containing each location mapped to a list of
     locations representing the shortest path from the start location to that
     location. A location mapped to an empty list means that there is no path
-    from the start location to the end location.
+    from the start location to the end location. Return false if the start
+    location is not in the graph.
     """
     # Create initial set of unvisited nodes.
     unvisited = set(location for location in graph)
 
+    # Return false if the start location is not in the graph.
+    if start not in unvisited:
+        return False
+
     # Create a dictionary to map each location to its estimated distance,
     # with the initial distance set to infinity except for the start
     # location, which has its distance set to 0.
-    distances = {location: INFINITY for location in dl.graph}
+    distances = {location: INFINITY for location in graph}
     distances[start] = 0
 
     # Create a dictionary to map each location to the shortest path. Paths
     # are initially empty except for the start node, which is mapped to
     # itself. Each path is a list of locations with the start location as the
     # first element and the end location as the last element.
-    paths = {location: [] for location in dl.graph}
+    paths = {location: [] for location in graph}
     paths[start] = [start]
 
     # Set minimum path length in the unvisited set to be 0 initially to
@@ -53,9 +54,7 @@ def shortest_path(graph, start):
     while (min_len < INFINITY):
         # Mark the minimum node as visited
         unvisited.remove(min_node)
-        # Get neighbors of minimum node in unvisited set, as well as the path
-        # for the minimum node
-        neighbors = min_node.adjList
+        # Get path to minimum node.
         min_node_path = paths[min_node]
         # Get all the neighbors of minimum node and see if they are visited.
         # If they are unvisited, check if the path through the minimum node
@@ -81,3 +80,19 @@ def shortest_path(graph, start):
 
     # Return map of paths
     return paths
+
+
+# Dictionary containing mapping each location in Stevenson to shortest path
+# map for each location.
+stevenson_paths = dict()
+for location in dl.graph:
+    stevenson_paths[location] = shortest_path(graph=dl.graph, start=location)
+
+
+def get_path_from_rooms(start_room, end_room):
+    """
+    Given two strings representing a room, use the dictionary containing the
+    :param start_room:
+    :param end_room:
+    :return:
+    """

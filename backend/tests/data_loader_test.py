@@ -105,3 +105,19 @@ def test_graph_2():
 # Check that a newly created elevator should not be in the graph
 def test_graph_3():
     assert locations.Elevator() != dl.graph
+
+
+#########################################
+## Tests for set of locations in graph ##
+#########################################
+# Test that locations that should be in set are in the set
+def test_rooms_set_1():
+    assert dl.hallway5_1 in dl.locations_set
+
+def test_rooms_set_2():
+    assert dl.elevator3 in dl.locations_set
+
+# Test that locations not in Stevenson are not in set
+def test_rooms_set_3():
+    assert locations.Elevator() not in dl.locations_set
+
