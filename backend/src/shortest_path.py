@@ -91,8 +91,27 @@ for location in dl.graph:
 
 def get_path_from_rooms(start_room, end_room):
     """
-    Given two strings representing a room, use the dictionary containing the
-    :param start_room:
-    :param end_room:
-    :return:
+    Given two strings representing a room, use the dictionary mapping the
+    rooms to hallways to find a start and end location, and use the
+    stevenson_paths dictionary to find and return the shortest path, which is
+    a list of locations to traverse.
+    :param start_room: String representing room to start from.
+    :param end_room: String representing room to end at.
+    :return: List of locations representing a path from the start room to the
+    end room. If either of the rooms do not exist in Stevenson, return False.
     """
+    # Get the corresponding locations for the start and end room
+    start_loc = dl.rooms_map.get(start_room)
+    end_loc = dl.rooms_map.get(end_room)
+    # Return false if either of the rooms does not exist.
+    if start_loc is None or end_loc is None:
+        return False
+    # Get dictionary with all shortest paths for the start location.
+    all_paths = stevenson_paths.get(start_loc)
+    # Return the shortest path to the end location from the dictionary of all
+    # shortest paths. Return false if there is not a corresponding location.
+    path = all_paths.get(end_loc)
+    if path is None:
+        return False
+    else:
+        return path

@@ -121,3 +121,14 @@ def test_rooms_set_2():
 def test_rooms_set_3():
     assert locations.Elevator() not in dl.locations_set
 
+############################################
+## Tests for mapping of rooms to hallways ##
+############################################
+def test_rooms_map_1():
+    assert dl.rooms_map.get("abcd") is None
+
+def test_rooms_map_2():
+    assert dl.rooms_map.get("1502") == dl.hallway5_2
+
+def test_rooms_map_3():
+    assert dl.rooms_map["1206A"] == dl.hallway2_2

@@ -185,3 +185,14 @@ graph = stevenson_math
 
 # Create set containing all locations in the graph
 locations_set = set(graph)
+
+# Create dictionary mapping rooms to the adjacent hallway
+rooms_map = {}
+# Go through all locations in map
+for location in graph:
+    # Only hallways have an adjacency list of rooms.
+    if isinstance(location, locations.Hallway):
+        # Each value in the adjacency list should be a key, and the value is
+        # the corresponding hallway
+        for room in location.roomList:
+            rooms_map[room] = location

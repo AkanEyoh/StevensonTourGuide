@@ -53,6 +53,7 @@ def test_shortest_path_3():
     # Check that the path to hallway3_1 is just the hallway itself.
     assert paths[dl.hallway3_1] == [dl.hallway3_1]
 
+
 # Check that a a start location that is not in the graph will return false.
 def test_shortest_path_4():
     # Get the graph from the data loader for Stevenson
@@ -62,3 +63,35 @@ def test_shortest_path_4():
     # Assert that there are no shortest path for the start location since it
     # is not in the graph
     assert sp.shortest_path(graph=graph, start=start) == False
+
+
+# Test finding the shortest path between two rooms.
+# Test that invalid room returns false
+def test_get_path_from_rooms_1():
+    path = sp.get_path_from_rooms("1514", "ATKL")
+    assert path == False
+
+
+# Test that same room returns just the adjacent hallway.
+def test_get_path_from_rooms_2():
+    path = sp.get_path_from_rooms("1206", "1206")
+    assert path == [dl.hallway2_2]
+
+
+# Test that two rooms adjacent to the same hallway returns just that hallway.
+def test_get_path_from_rooms_3():
+    path = sp.get_path_from_rooms("1401", "1420")
+    assert path == [dl.hallway4_2]
+
+
+# Tests for path that traverses several locations
+def test_get_path_from_rooms_4():
+    path = sp.get_path_from_rooms("1531", "1113")
+    assert path == [dl.hallway5_1, dl.staircase5_1, dl.staircase4_1,
+                    dl.staircase3_1, dl.staircase2_1, dl.staircase1_1,
+                    dl.hallway1_1]
+
+def test_get_path_from_rooms_5():
+    path = sp.get_path_from_rooms("1110C", "1232")
+    assert path == [dl.hallway1_2, dl.staircase1_2, dl.staircase2_2,
+                    dl.hallway2_2, dl.hallway2_1]
