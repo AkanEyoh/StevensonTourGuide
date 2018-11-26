@@ -16,6 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+# imports the get route function from routeFinder/views.py
+from routeFinder.views import get_route
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # this url is the url to get a particular route, the first value is a starting point
+    # the second value is the endpoint
+    path('routeFinder/<str:start>/<str:end>/', get_route),
 ]
