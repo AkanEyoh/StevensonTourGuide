@@ -6,8 +6,8 @@
 #  shortest path from one room to another.
 
 # from src import bfs
-from src import locations
-from src import data_loader
+import locations
+import data_loader
 
 def main_func():
     start_room = input("Hello User. Welcome to Steveson Tour Guide. Today, I will help you find your classroom. Which room in " \
