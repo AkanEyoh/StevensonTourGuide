@@ -103,11 +103,11 @@ class shortest_path:
         stevenson_paths = dict()
         data_load_object = dl.data_loader()
         for location in data_load_object.graph:
-            stevenson_paths[location] = self.shortest_path_getter(graph=dl.graph, start=location)
+            stevenson_paths[location] = self.shortest_path_getter(graph=data_load_object.graph, start=location)
 
         # Get the corresponding locations for the start and end room
-        start_loc = dl.rooms_map.get(start_room)
-        end_loc = dl.rooms_map.get(end_room)
+        start_loc = data_load_object.rooms_map.get(start_room)
+        end_loc = data_load_object.rooms_map.get(end_room)
         # Return false if either of the rooms does not exist.
         if start_loc is None or end_loc is None:
             return False

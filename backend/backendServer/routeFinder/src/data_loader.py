@@ -184,18 +184,18 @@ class data_loader:
                         hallway2_2, hallway3_1, hallway3_2, hallway4_1, hallway4_2,
                         hallway5_1, hallway5_2]
 
-        graph = stevenson_math
+        self.graph = stevenson_math
 
         # Create set containing all locations in the graph
-        locations_set = set(graph)
+        # locations_set = set(self.graph)
 
         # Create dictionary mapping rooms to the adjacent hallway
-        rooms_map = {}
+        self.rooms_map = {}
         # Go through all locations in map
-        for location in graph:
+        for location in self.graph:
             # Only hallways have an adjacency list of rooms.
             if isinstance(location, locations.Hallway):
                 # Each value in the adjacency list should be a key, and the value is
                 # the corresponding hallway
                 for room in location.roomList:
-                    rooms_map[room] = location
+                    self.rooms_map[room] = location

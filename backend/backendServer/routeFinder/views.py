@@ -10,10 +10,10 @@ def get_route(request, start, end):
     class_instance = shortest_path.shortest_path()
 
     route = class_instance.get_path_from_rooms(start, end)
-    print(route)
+
     response = HttpResponse()
-    response.write("<p>This is the start: </p>")
-    response.write(start)
-    response.write("<p>This is the end: </p>")
-    response.write(end)
+    for location in route:
+        print(location.to_string())
+        response.write(location.to_string())
+
     return response
