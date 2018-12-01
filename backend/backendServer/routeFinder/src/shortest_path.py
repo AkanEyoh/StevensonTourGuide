@@ -13,7 +13,7 @@ from . import data_loader as dl
 
 class shortest_path:
     def __init__(self):
-        print("what's up")
+        pass
 
     def shortest_path_getter(self, graph, start):
         """
