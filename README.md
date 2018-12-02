@@ -14,3 +14,9 @@ Documentation for design choices.
 
 ## .travis.yml
 Travis script to run tests with Travis CI.
+
+## Exercises
+Folder for DIVE exercises and user stories for CS 278 final project.
+
+## Tests
+Tests are at https://travis-ci.org/AkanEyoh/StevensonTourGuide
