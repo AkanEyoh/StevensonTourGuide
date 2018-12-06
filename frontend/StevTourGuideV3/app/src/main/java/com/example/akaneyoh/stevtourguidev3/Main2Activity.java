@@ -1,7 +1,6 @@
 package com.example.akaneyoh.stevtourguidev3;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,9 +9,9 @@ import android.widget.EditText;
 
 public class Main2Activity extends AppCompatActivity {
 
-    String urlPath;
-    String startRoom;
-    String endRoom;
+    public static String urlPath;
+    public static String startRoom;
+    public static String endRoom;
 
     EditText startRoomInput;
     EditText endRoomInput;
@@ -34,11 +33,14 @@ public class Main2Activity extends AppCompatActivity {
                 startRoom = startRoomInput.getText().toString();
                 endRoom = endRoomInput.getText().toString();
 
-                urlPath = "http://18.212.189.150:5000/routeFinder/" + startRoom + "/" + endRoom;
-                Uri uri = Uri.parse(urlPath);
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+                urlPath = "http://10.66.45.42:5000/routeFinder/" + startRoom + "/" + endRoom;
+                openActivity3(v);
             }
         });
+    }
+
+    public void openActivity3(View view) {
+        Intent intent = new Intent(Main2Activity.this, Main3Activity.class);
+        startActivity(intent);
     }
 }
