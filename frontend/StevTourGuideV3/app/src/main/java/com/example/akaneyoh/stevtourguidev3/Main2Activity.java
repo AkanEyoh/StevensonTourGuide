@@ -3,6 +3,7 @@ package com.example.akaneyoh.stevtourguidev3;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,7 +34,7 @@ public class Main2Activity extends AppCompatActivity {
                 startRoom = startRoomInput.getText().toString();
                 endRoom = endRoomInput.getText().toString();
 
-                urlPath = "http://10.66.45.42:5000/routeFinder/" + startRoom + "/" + endRoom;
+                urlPath = "http://18.212.189.150:5000/routeFinder/" + startRoom + "/" + endRoom;
                 openActivity3(v);
             }
         });
