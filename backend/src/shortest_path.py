@@ -9,7 +9,8 @@
 INFINITY = 999999  # Placeholder to initialize distances to "infinity"
 
 # Import libraries
-from src import data_loader as dl
+import data_loader as dl
+import locations
 
 def shortest_path(graph, start):
     """
@@ -115,3 +116,111 @@ def get_path_from_rooms(start_room, end_room):
         return False
     else:
         return path
+
+def is_hallway(loc):
+    """
+    Returns if the given location is a hallway
+    :param loc: the location to be checked
+    :return whether the location is a hallway
+    """
+    return isinstance(loc, locations.Hallway)
+
+def is_turning_junction(loc1, loc2):
+    """
+    Returns if the two locations form a turning junction,
+    i.e. if the user needs to be given a turning direction here
+    :param loc1: first location
+    :param loc2: second location
+    :return whether there is a turning juncture
+    """
+    return is_hallway(loc2) and (not is_hallway(loc1) or loc1 in loc2.topviewOrderList)
+
+def find_turn(loc1, loc2, loc3, direction):
+    """
+    Determnes what turn should be made when the user is travelling from
+    loc1 to loc2 and outputs a string representing that direction. E.g.
+    'Turn right at the hallway.' Note this also includes when the user
+    doesn't need to turn and just travels straight on.
+    :param loc1: start location
+    :param loc2: intermediate location (must be a hallway)
+    :param loc3: location to go to view loc2
+    :return string representing correct direction to go
+    """
+    direction_grid = [['right', 'left'], ['left', 'right']]
+
+    if loc1 in loc2.topviewAboveList:
+        entry_top_oriented = 0
+    elif loc1 in loc2.topviewBelowList:
+        entry_top_oriented = 1
+
+    if is_hallway(loc3) and loc3 not in loc2.topviewAboveList + loc2.topviewBelowList:
+        # going from a hallway into another hallway of same orientation
+        if loc3 in loc2.topviewLeftList:
+            dest_left = 0
+        elif loc3 in loc2.topviewRightList:
+            dest_left = 1
+    else:
+        # going from hallway into a room / stair / perpendicular hallway
+        loc1_dist_to_right = loc2.topviewOrderList.index(loc1)
+        loc3_dist_to_right = loc2.topviewOrderList.index(loc3)
+        if loc3_dist_to_right < loc1_dist_to_right:
+            dest_left = 0
+        else:
+            dest_left = 1
+
+    return ['Take a ' + direction_grid[entry_top_oriented][dest_left], dest_left == 0]
+
+def path_to_string(path, start, dest):
+    """ 
+    Takes the path produced by get_paths_from_rooms and produces
+    a string representing the instructions that should be taken by the 
+    user to arrive at their destination
+    :param path: the path produced by get_paths_from_rooms
+    :param start: the starting room
+    :param dest: the destination room
+    :return a string representing the directions
+    """
+    cur_direction = None
+    cur_loc = start
+    path_string = ''
+    while len(path) != 0:
+        next_loc = path[0]
+        path = path[1:]
+
+        if is_turning_junction(cur_loc, next_loc):
+    
+            if cur_loc in next_loc.topviewLeftList:
+                # door / staircase / elevator already faces into hallway
+                # no turn necessary
+                path_string += 'Continue straight ahead\n'
+                cur_direction = 'right'
+
+            elif cur_loc in next_loc.topviewRightList:
+                path_string += 'Continue straight ahead\n'
+                cur_direction = 'left'
+
+            else:
+                try:
+                    # future_loc is the location after next_loc in path
+                    future_loc = path[0]
+                    ret = find_turn(cur_loc, next_loc, future_loc)
+                    path_string += ret[0]
+                    if ret[1]:
+                        cur_direction = 'left'
+                    else:
+                        cur_direction = 'right' 
+
+                except IndexError: 
+                    ret = find_turn(cur_loc, next_loc, dest)
+                    path_string += ret[0]
+                    if ret[1]:
+                        cur_direction = 'left'
+                    else:
+                        cur_direction = 'right'
+
+        # user travelling straight through a hallway
+        # no directions needed
+        elif is_hallway(cur_loc) and is_hallway(next_loc):
+            pass
+
+        elif 

@@ -38,10 +38,14 @@ class Location:
 # defines a hallway class that extends Location
 # this stores an adjacency list, room list, and the length of the hallway
 class Hallway(Location):
-    def __init__(self, adjList=[], roomList=[], length=DEFAULT_HALLWAY_LENGTH,
-                 id_name=DEFAULT_ID):
+    def __init__(self, adjList=[], roomList=[], topviewAboveList=[], topviewBelowList=[], topviewLeftList=[], topviewRightList=[], topviewOrderList=[], length=DEFAULT_HALLWAY_LENGTH, id_name=DEFAULT_ID):
         super().__init__(adjList=adjList, length=length, id_name=id_name)
         self.roomList = roomList
+        self.topviewAboveList = topviewAboveList
+        self.topviewBelowList = topviewBelowList
+        self.topviewLeftList = topviewLeftList
+        self.topviewRightList= topviewRightList
+        self.topviewOrderList = topviewOrderList
 
     # functions that operate on the rooms of a hallway
     def get_room_list(self):
