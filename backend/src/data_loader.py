@@ -73,13 +73,14 @@ staircase2_1 = locations.Staircase(id_name="staircase2-1")
 hallway2_1 = locations.Hallway(id_name="hallway2-1")
 hallway2_2 = locations.Hallway(id_name="hallway2-2")
 elevator2_1 = locations.Elevator(id_name="elevator2-1")
-hallway2_2 = locations.Hallway(id_name="hallway2-2")
+hallway2_3 = locations.Hallway(id_name="hallway2-3")
 staircase2_3 = locations.Staircase(id_name="staircase2-3")
 
 # Load data
 staircase2_1.adjList = [hallway2_1]
 hallway2_1.roomList = ["100A", "102", "102A", "102B", "107"]
-hallway2_1.adjList = [staircase2_1, hallway2_2, elevator2_1]
+hallway2_1.adjList = [staircase2_1, hallway1_2]
+hallway2_1.adjList = [staircase2_1, hallway1_2, hallway2_2, elevator2_1]
 
 
 ####################### Reid's stuff ends here
