@@ -36,6 +36,16 @@ hallway1_2 = locations.Hallway(id_name="hallway1-2")
 
 staircase1_2 = locations.Staircase(id_name="staircase1-2")
 
+## Building 2 floor 1 Locations
+
+# Building 2 Floor 1 Initialize data
+staircase2_1 = locations.Staircase(id_name="staircase2-1")
+hallway2_1 = locations.Hallway(id_name="hallway2-1")
+hallway2_2 = locations.Hallway(id_name="hallway2-2")
+elevator2_1 = locations.Elevator(id_name="elevator2-1")
+hallway2_3 = locations.Hallway(id_name="hallway2-3")
+staircase2_3 = locations.Staircase(id_name="staircase2-3")
+
 ##################################
 ## Set attributes for locations.##
 ##################################
@@ -57,7 +67,7 @@ elevator1.adjList = [hallway1_1, hallway1_2]
 hallway1_2.roomList = ["1103", "1107", "1109", "1110", "1110A", "1110B",
                        "1110C", "1130"]
 # New stuff starts here
-hallway1_2.adjList = [staircase1_2, elevator1, hallway1_1]
+hallway1_2.adjList = [staircase1_2, elevator1, hallway1_1, hallway2_1]
 hallway1_2.length = 8
 hallway1_2.topviewAboveList = ["1130", "1110C", "1110B", "1110A", "1110"]
 hallway1_2.topviewBelowList = ["1109", "1107", "1103"]
@@ -68,20 +78,15 @@ hallway1_2.topviewOrderList = ["1130", "1110C", "1109", "1107", "1110B", "1110A"
 
 ##################### Reid's stuff starts here
 
-# Building 2 Floor 1 Initialize data
-staircase2_1 = locations.Staircase(id_name="staircase2-1")
-hallway2_1 = locations.Hallway(id_name="hallway2-1")
-hallway2_2 = locations.Hallway(id_name="hallway2-2")
-elevator2_1 = locations.Elevator(id_name="elevator2-1")
-hallway2_3 = locations.Hallway(id_name="hallway2-3")
-staircase2_3 = locations.Staircase(id_name="staircase2-3")
 
 # Load data
 staircase2_1.adjList = [hallway2_1]
+
 hallway2_1.roomList = ["100A", "102", "102A", "102B", "107"]
-hallway2_1.adjList = [staircase2_1, hallway1_2]
 hallway2_1.adjList = [staircase2_1, hallway1_2, hallway2_2, elevator2_1]
 
+hallway2_2.roomList = ["101", "105"]
+hallway2_2.roomList = ["121A", "121B","121C", "121D", "120", "129", "128", "122"]
 
 ####################### Reid's stuff ends here
 
