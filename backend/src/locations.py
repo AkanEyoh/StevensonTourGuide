@@ -70,6 +70,9 @@ class Elevator(Location):
                  id_name=DEFAULT_ID):
         super().__init__(adjList=adjList, length=length, id_name=id_name)
 
+    def get_floor(self):
+        return self.floor
+
 
 # this defines a staircase class
 # the staircase does not have rooms attached to it
@@ -78,3 +81,6 @@ class Staircase(Location):
     def __init__(self, adjList=[], length=DEFAULT_STAIRCASE_LENGTH,
                  id_name=DEFAULT_ID):
         super().__init__(adjList=adjList, length=length, id_name=id_name)
+
+    def get_floor(self):
+        return self.floor

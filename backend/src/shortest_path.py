@@ -119,11 +119,24 @@ def get_path_from_rooms(start_room, end_room):
 
 def is_hallway(loc):
     """
-    Returns if the given location is a hallway
     :param loc: the location to be checked
     :return whether the location is a hallway
     """
     return isinstance(loc, locations.Hallway)
+
+def is_elevator(loc):
+    """
+    :param loc: location to be checked
+    :return whether the location is an elevator
+    """
+    return isinstance(loc, locations.Elevator)
+
+def is_staircase(loc):
+    """
+    :param loc: location to be checked
+    :return whether the location is a staircase
+    """
+    return isinstance(loc, locations.Staircase)
 
 def is_turning_junction(loc1, loc2):
     """
@@ -135,7 +148,26 @@ def is_turning_junction(loc1, loc2):
     """
     return is_hallway(loc2) and (not is_hallway(loc1) or loc1 in loc2.topviewOrderList)
 
-def find_turn(loc1, loc2, loc3, direction):
+def is_hallway_exit(loc1, loc2):
+    """
+    Returns whether loc1 is a hallway and loc2 is anything but a
+    parallel hallway to loc1, signifying that the user needs to
+    be told to take a right, left, or straight ahead here'
+    """
+    return is_hallway(loc1) and (not is_hallway(loc2) or loc2 in loc1.topviewAboveList + loc1.topviewBelowList)
+
+def first_nonstair_index(path):
+    """
+    :path the remaining locations left the user must pass through
+    :return the index of the first location in the path which is not a staircase object (-1 if N/A)
+    """
+    try:
+        return path.index(list(filter(lambda x: not is_staircase(x), path))[0])
+
+    except ValueError:
+        return -1
+
+def find_turn(loc1, loc2, loc3):
     """
     Determnes what turn should be made when the user is travelling from
     loc1 to loc2 and outputs a string representing that direction. E.g.
@@ -168,7 +200,26 @@ def find_turn(loc1, loc2, loc3, direction):
         else:
             dest_left = 1
 
-    return ['Take a ' + direction_grid[entry_top_oriented][dest_left], dest_left == 0]
+    return ['Take a ' + direction_grid[entry_top_oriented][dest_left] + '. ', dest_left == 0]
+
+def turn_from_hallway(hallway, intermed_dest, direction):
+    """
+    Determines what direction (on the left, on the right, or straight ahead)
+    intermed_dest will be for a user in hallway in direction. Note that
+    intermed_dest will often be an elevator/staircase/hallway but could
+    also be the actual destination room.
+    :param hallway: the hallway the user is currently walking through
+    :param intermed_dest: where the user is going via the hallway
+    :param direction: the direction the are walking through the hallway
+    :return 'left', 'right', or 'straight ahead' accordingly.
+    """
+    dest_at_top = intermed_dest in hallway.topviewAboveList 
+    if intermed_dest in hallway.topviewLeftList + hallway.topviewRightList:
+        return 'straight ahead'
+    elif dest_at_top and direction == 'right' or not dest_at_top and direction == 'left':
+        return 'left'
+    else:
+        return 'right'
 
 def path_to_string(path, start, dest):
     """ 
@@ -187,12 +238,13 @@ def path_to_string(path, start, dest):
         next_loc = path[0]
         path = path[1:]
 
+        # does the user need to make a turn immediately?
         if is_turning_junction(cur_loc, next_loc):
     
             if cur_loc in next_loc.topviewLeftList:
                 # door / staircase / elevator already faces into hallway
                 # no turn necessary
-                path_string += 'Continue straight ahead\n'
+                path_string += 'Walk straight ahead. '
                 cur_direction = 'right'
 
             elif cur_loc in next_loc.topviewRightList:
@@ -218,9 +270,42 @@ def path_to_string(path, start, dest):
                     else:
                         cur_direction = 'right'
 
-        # user travelling straight through a hallway
-        # no directions needed
-        elif is_hallway(cur_loc) and is_hallway(next_loc):
-            pass
+        # check if this is the final hallway -- if so, the final direction needs to be given
+        if len(path) == 0:
+            turn_direction = turn_from_hallway(next_loc, dest, cur_direction)
+            if turn_direction == 'straight ahead':
+                path_string += 'Your destination is ' + turn_direction
+            else:
+                path_string += 'Your destination is on the ' + turn_direction
 
-        elif 
+        # check if the user needs to turn from the hallway into the next location
+        elif is_hallway_exit(cur_loc, next_loc):
+            path_string += 'Enter ' + next_loc.to_string() + ' which will be on your ' + turn_from_hallway(cur_loc, dest, cur_direction) + '. '
+
+        # user entering elevator
+        elif all(map(is_elevator, [cur_loc, next_loc])):
+            path_string += 'Head to floor ' + next_loc.get_floor()
+        
+        # user entering staircase
+        elif all(map(is_staircase, [cur_loc, next_loc])):
+            start_floor = cur_loc.get_floor()
+            index = first_nonstair_index(path)
+
+            if index != 0:
+                # there are more staircase objects ahead that need to be pulled from the path
+                next_loc = path[index - 1]    
+    
+            end_floor = next_loc.get_floor()
+            path = path[index:]
+            direction = 'up' if start_floor < end_floor else 'down'
+            floor_difference = abs(end_floor - start_floor)
+            floor_noun = 'floor' if floor_difference == 1 else 'floors' 
+            path_string += 'Go ' + direction + ' ' + str(floor_difference) + ' ' + floor_noun + '. '
+
+        # change of guard
+        cur_loc = next_loc
+
+    return path_string
+
+def get_directions(startRoom, endRoom):
+    return path_to_string(get_path_from_rooms(startRoom, endRoom), startRoom, endRoom)
