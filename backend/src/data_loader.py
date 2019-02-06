@@ -1,4 +1,4 @@
-## Author(s): Akaninyene Eyoh, Daniel Yan
+## Author(s): Akaninyene Eyoh, Daniel Yan, Reid Wilson, Keaton Ufheil
 ## Date: 2018-11-06
 ## Email: akaninyene.e.eyoh@vanderbilt.edu, daniel.yan@vanderbilt.edu
 ## Filename: dataLoader.py
@@ -80,6 +80,13 @@ hallway5_2 = locations.Hallway(id_name="hallway5-2")
 
 staircase5_2 = locations.Staircase(id_name="staircase5-2")
 
+#Bio locations start
+bio_staircase2_1 = locations.Staircase(id_name="bio_staircase2_1")
+
+bio_hallway2_1 = locations.Hallway(id_name="bio_hallway2_1")
+
+bio_hallway2_2 = locations.Hallway(id_name="bio_hallway2_2")
+
 ##################################
 ## Set attributes for locations.##
 ##################################
@@ -95,7 +102,7 @@ elevator1.adjList = [hallway1_1, hallway1_2, elevator2, elevator3, elevator4,
 
 hallway1_2.roomList = ["1103", "1107", "1109", "1110", "1110A", "1110B",
                        "1110C", "1130"]
-hallway1_2.adjList = [staircase1_2, elevator1, hallway1_1]
+hallway1_2.adjList = [staircase1_2, elevator1, hallway1_1, bio_hallway2_1]
 hallway1_2.length = 8
 
 staircase1_2.adjList = [hallway1_2, staircase2_2]
@@ -172,6 +179,20 @@ hallway5_2.length = 15
 
 staircase5_2.adjList = [hallway5_2, staircase4_2]
 
+##################### Reid's stuff starts here
+
+
+# Load data
+bio_staircase2_1.adjList = [hallway2_1]
+
+bio_hallway2_1.roomList = ["100A", "102", "102A", "102B", "107"]
+bio_hallway2_1.adjList = [bio_staircase2_1, hallway1_2, bio_hallway2_2, elevator2_1]
+
+bio_hallway2_2.roomList = ["101", "105"]
+bio_hallway2_2.roomList = ["121A", "121B","121C", "121D", "120", "129", "128", "122"]
+
+####################### Reid's stuff ends here
+
 # Graph that is a list of all locations. Set the initial graph to the
 # Stevenson math building.
 stevenson_math = [staircase1_1, staircase1_2, staircase2_1, staircase2_2,
@@ -179,7 +200,8 @@ stevenson_math = [staircase1_1, staircase1_2, staircase2_1, staircase2_2,
                   staircase5_1, staircase5_2, elevator1, elevator2, elevator3,
                   elevator4, elevator5, hallway1_1, hallway1_2, hallway2_1,
                   hallway2_2, hallway3_1, hallway3_2, hallway4_1, hallway4_2,
-                  hallway5_1, hallway5_2]
+                  hallway5_1, hallway5_2, bio_staircase2_1, bio_hallway2_1,
+		  bio_hallway2_2]
 
 graph = stevenson_math
 
