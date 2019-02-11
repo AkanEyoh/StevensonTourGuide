@@ -1,1 +1,62 @@
 // Daily Accomplishments
+
+/*
+1/14/19
+- Team Members present: Akan Eyoh, Reid Wilson, Keaton Ufheil
+- Decided to expand upon the framework already started last semester
+- Action steps: find floor plans for all of Stevenson, potential contacts:
+VUIT department, Plant Operations, Construction operations
+
+1/16/19
+- Walked around most Stevenson buildings to get team acquainted with the 
+structure of the 7 buildings
+- Talked to Stevenson’s map librarian to see if we could get floor plans 
+of building
+- Map librarian directed team to Plant Operations building to talk to 
+workers there for floor plans
+- Team was told to sign a non-disclosure form before receiving floor plans, 
+gotten from Chris Jones of Plant Ops
+- Team received floor plans via email after turning in form
+
+1/18/19
+- Team did not meet, worked individually
+
+1/21/19
+- Team did not meet, MLK Holiday
+
+1/23/19
+- Team did not meet due to sickness of member
+- Continued working individually 
+
+1/28/19
+- Team Meeting day with Prof. Jules
+- was advised to try Heroku as a means of deploying Django server
+
+1/30/19
+- Demo Day #1
+- displayed general plans to class to build off of what was already accomplished
+from previous semester
+- showed plans to implement turning directions, improved UI, and other building data
+
+2/1/19
+- began attempting to start Heroku deployment of Django server
+- resulted unsuccessful
+
+2/4/19
+- team established Trello accounts to keep track of tasks needing to get done
+- https://trello.com/b/BmtdyG5y/tourguide
+
+2/6/19
+- 
+
+2/8/19
+
+2/11/19
+- Team Meeting Day w/ Prof. Jules
+- further progressed made on relational directions by Keaton
+- started taking physical photos of Stevenson buildings (Akan: Math Building (1), 
+Reid (Bio/Molec Building (2))
+- began changing naming scheme from last semester to fit a general network of buildings
+rather than just one (i.e. staircase1_1 --> math_staircase1_1 and bio_staircase1_1)
+
+*/
