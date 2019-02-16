@@ -200,7 +200,7 @@ def find_turn(loc1, loc2, loc3):
         else:
             dest_left = 1
 
-    return ['Take a ' + direction_grid[entry_top_oriented][dest_left] + '. ', dest_left == 0]
+    return ['Take a ' + direction_grid[entry_top_oriented][dest_left] + '.', dest_left == 0]
 
 def turn_from_hallway(hallway, intermed_dest, direction):
     """
@@ -233,7 +233,7 @@ def path_to_string(path, start, dest):
     """
     cur_direction = None
     cur_loc = start
-    path_string = ''
+    path_string = []
     while len(path) != 0:
         next_loc = path[0]
         path = path[1:]
@@ -244,11 +244,11 @@ def path_to_string(path, start, dest):
             if cur_loc in next_loc.topviewLeftList:
                 # door / staircase / elevator already faces into hallway
                 # no turn necessary
-                path_string += 'Walk straight ahead. '
+                path_string.append('Walk straight ahead.');
                 cur_direction = 'right'
 
             elif cur_loc in next_loc.topviewRightList:
-                path_string += 'Continue straight ahead\n'
+                path_string.append('Continue straight ahead.')
                 cur_direction = 'left'
 
             else:
@@ -256,7 +256,7 @@ def path_to_string(path, start, dest):
                     # future_loc is the location after next_loc in path
                     future_loc = path[0]
                     ret = find_turn(cur_loc, next_loc, future_loc)
-                    path_string += ret[0]
+                    path_string.append(ret[0])
                     if ret[1]:
                         cur_direction = 'left'
                     else:
@@ -264,7 +264,7 @@ def path_to_string(path, start, dest):
 
                 except IndexError: 
                     ret = find_turn(cur_loc, next_loc, dest)
-                    path_string += ret[0]
+                    path_string.append(ret[0])
                     if ret[1]:
                         cur_direction = 'left'
                     else:
@@ -274,17 +274,17 @@ def path_to_string(path, start, dest):
         if len(path) == 0:
             turn_direction = turn_from_hallway(next_loc, dest, cur_direction)
             if turn_direction == 'straight ahead':
-                path_string += 'Your destination is ' + turn_direction
+                path_string.append('Your destination is ' + turn_direction + '.')
             else:
-                path_string += 'Your destination is on the ' + turn_direction
+                path_string.append('Your destination is on the ' + turn_direction + '.')
 
         # check if the user needs to turn from the hallway into the next location
         elif is_hallway_exit(cur_loc, next_loc):
-            path_string += 'Enter ' + next_loc.to_string() + ' which will be on your ' + turn_from_hallway(cur_loc, dest, cur_direction) + '. '
+            path_string.append('Enter ' + next_loc.to_string() + ' which will be on your ' + turn_from_hallway(cur_loc, dest, cur_direction) + '.')
 
         # user entering elevator
         elif all(map(is_elevator, [cur_loc, next_loc])):
-            path_string += 'Head to floor ' + next_loc.get_floor()
+            path_string.append('Head to floor ' + str(next_loc.get_floor()) + '.')
         
         # user entering staircase
         elif all(map(is_staircase, [cur_loc, next_loc])):
@@ -300,7 +300,7 @@ def path_to_string(path, start, dest):
             direction = 'up' if start_floor < end_floor else 'down'
             floor_difference = abs(end_floor - start_floor)
             floor_noun = 'floor' if floor_difference == 1 else 'floors' 
-            path_string += 'Go ' + direction + ' ' + str(floor_difference) + ' ' + floor_noun + '. '
+            path_string.append('Go ' + direction + ' ' + str(floor_difference) + ' ' + floor_noun + '.')
 
         # change of guard
         cur_loc = next_loc

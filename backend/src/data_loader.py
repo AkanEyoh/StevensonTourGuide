@@ -60,7 +60,7 @@ hallway1_1.topviewAboveList = ["1120", staircase1_1, "1118", "1114"]
 hallway1_1.topviewBelowList = ["1117", "1115", "1113", elevator1]
 hallway1_1.topviewLeftList = ["1122"]
 hallway1_1.topviewRightList = [hallway1_2]
-hallway1_1.topviewOrderList = ["1120", "1170", staircase1_1, "1118", "1115", "1114", "1113", elevator1]
+hallway1_1.topviewOrderList = ["1122", "1120", "1117", staircase1_1, "1118", "1115", "1114", "1113", elevator1]
 
 
 elevator1.adjList = [hallway1_1, hallway1_2, elevator2]
@@ -70,11 +70,11 @@ hallway1_2.roomList = ["1103", "1107", "1109", "1110", "1110A", "1110B",
                        "1110C", "1130"]
 hallway1_2.adjList = [staircase1_2, elevator1, hallway1_1]
 hallway1_2.length = 8
-hallway1_2.topviewAboveList = ["1130", "1110C", "1110B", "1110A", "1110"]
-hallway1_2.topviewBelowList = ["1109", "1107", "1103"]
+hallway1_2.topviewAboveList = [staircase1_2, "1110C", "1110B", "1110A", "1110"]
+hallway1_2.topviewBelowList = [elevator1, "1109", "1107", "1103"]
 hallway1_2.topviewLeftList = [hallway1_1]
 hallway1_2.topviewRightList = []
-hallway1_2.topviewOrderList = ["1130", "1110C", "1109", "1107", "1110B", "1110A", "1110", "1103", staircase1_2]
+hallway1_2.topviewOrderList = [staircase1_2, elevator1, "1110C", "1109", "1107", "1110B", "1110A", "1110", "1103", staircase1_2]
 
 staircase1_2.adjList = [hallway1_2, staircase2_2]
 staircase1_2.floor = 1
@@ -99,11 +99,11 @@ elevator2.floor = 2
 hallway2_2.roomList = ["1219", "1214", "1210", "1206"]
 hallway2_2.adjList = [staircase2_2, elevator2, hallway2_1]
 hallway2_2.length = 7
-hallway2_2.topviewAboveList = ["1214", "1210", "1206"]
-hallway2_2.topviewBelowList = ["1219"]
+hallway2_2.topviewAboveList = ["1214", "1210", "1206", staircase2_2]
+hallway2_2.topviewBelowList = [elevator2, "1219"]
 hallway2_2.topviewLeftList = [hallway2_1]
 hallway2_2.topviewRightList = []
-hallway2_2.topviewOrderList = ["1219", "1214", "1210", "1206"]
+hallway2_2.topviewOrderList = [elevator2, "1219", "1214", "1210", "1206", staircase2_2]
 
 staircase2_2.adjList = [hallway2_2, staircase1_2]
 staircase2_2.floor = 2
