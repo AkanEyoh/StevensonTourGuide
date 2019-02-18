@@ -59,4 +59,7 @@ Reid (Bio/Molec Building (2))
 - began changing naming scheme from last semester to fit a general network of buildings
 rather than just one (i.e. staircase1_1 --> math_staircase1_1 and bio_staircase1_1)
 
+2/18/19 
+- demo day
+
 */
