@@ -231,6 +231,10 @@ def path_to_string(path, start, dest):
     :param dest: the destination room
     :return a string representing the directions
     """
+    if start == dest:
+        return ['Stay in the room you are in', 'You are now at your destination']
+    
+
     cur_direction = None
     cur_loc = start
     path_string = []
