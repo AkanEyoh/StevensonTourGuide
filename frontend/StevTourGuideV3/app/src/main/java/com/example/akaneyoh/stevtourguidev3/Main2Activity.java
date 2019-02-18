@@ -34,7 +34,7 @@ public class Main2Activity extends AppCompatActivity {
                 startRoom = startRoomInput.getText().toString();
                 endRoom = endRoomInput.getText().toString();
 
-                urlPath = "http://18.218.180.140:5000/routeFinder/" + startRoom + "/" + endRoom;
+                urlPath = "http://18.218.180.140:8000/routeFinder/" + startRoom + "/" + endRoom;
                 openActivity3(v);
             }
         });
