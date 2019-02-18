@@ -68,7 +68,7 @@ public class Main3Activity extends AppCompatActivity {
                             } else {
                                 for (int i = 0; i < jsonArray.length(); i++) {
                                     if (jsonArray.getString(i) != "null") {
-                                        printedPath = printedPath + ("\nGo to " + jsonArray.getString(i));
+                                        printedPath = printedPath + "\n" + jsonArray.getString(i));
                                     }
                                 }
                                 String intro = "You are currently located at Room " + Main2Activity.startRoom + ". "
