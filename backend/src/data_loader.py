@@ -96,6 +96,11 @@ math_staircase1_1.adjList = [math_hallway1_1, math_staircase2_1]
 math_hallway1_1.roomList = ["1113", "1114", "1115", "1117", "1118", "1120", "1122"]
 math_hallway1_1.adjList = [math_staircase1_1, math_elevator1, math_hallway1_2]
 math_hallway1_1.length = 7
+math_hallway1_1.topviewAboveList = ["1120", math_staircase1_1, "1118", "1114"]
+math_hallway1_1.topviewBelowList = ["1117", "1115", "1113", math_elevator1_1]
+math_hallway1_1.topviewLeftList = ["1122"]
+math_hallway1_1.topviewRightList = [math_hallway1_2]
+math_hallway1_1.topviewOrderList = ["1122", "1120", "1117", math_staircase1_1, "1118", "1115", "1114", "1113", math_elevator1_1]
 
 math_elevator1.adjList = [math_hallway1_1, math_hallway1_2, math_elevator2, math_elevator3, math_elevator4,
                      math_elevator5]
