@@ -40,16 +40,17 @@ from previous semester
 
 2/1/19
 - began attempting to start Heroku deployment of Django server
-- resulted unsuccessful
+- resulted unsuccessful, 
 
 2/4/19
 - team established Trello accounts to keep track of tasks needing to get done
 - https://trello.com/b/BmtdyG5y/tourguide
+- continued working on individual tasks (Akan = working on frontend & getting a new EC2
+instance running, Keaton = reworking return_list to give more specific directions, Reid =
+inputting building 2 into current stevenson_graph)
 
 2/6/19
-- 
-
-2/8/19
+- team did not meet, continued working on individual tasks
 
 2/11/19
 - Team Meeting Day w/ Prof. Jules
@@ -58,8 +59,21 @@ from previous semester
 Reid (Bio/Molec Building (2))
 - began changing naming scheme from last semester to fit a general network of buildings
 rather than just one (i.e. staircase1_1 --> math_staircase1_1 and bio_staircase1_1)
+- finally got the EC2 instance to start running (server = 18.218.180.140 on port 8000)
+- lack of commits this cycle is mainly due to time spent connecting Android frontend
+and getting EC2 instance running
+
+2/17/19
+- team met over weekend to discuss what the goal of the demo was to show
+- agreed that that goal of demo was to show connection between python backend and Android
+frontend
+- show a bit of room navigation (room from one floor to another, stay on the same floor,
+between 2 buildings, etc.)
 
 2/18/19 
-- demo day
+- Demo Day #2
+- showed off improvements from previous demo (EC2 instance running succesfully, Android
+frontend running sucessfully, navigation between Math building and Bio building working 
+successfully 
 
 */
