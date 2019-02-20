@@ -160,13 +160,13 @@ hallway2_2_2.topviewBelowList = [hallway2_2_1]
 hallway2_2_2.topviewOrderList = ["2200", "2212", hallway2_2_3, hallway2_2_1]
 
 hallway2_2_3.roomList = ["2212"]
-hallway2_2_3.adjList = [hallway2_2_2] # TODO: connect to building 3/4 (whichever is next to here)
+hallway2_2_3.adjList = [hallway2_2_2]  # TODO: connect to building 3 (whichever is next to here)
 hallway2_2_3.length = len(hallway2_2_3.roomList)
 hallway2_2_3.topviewLeftList = ["2212"]
-hallway2_2_3.topviewAboveList = [] # TODO: Same as above!!!!!!!!!!!!!
-hallway2_2_3.topviewRightList = [] # TODO: May need to say there are outside exits here
+hallway2_2_3.topviewAboveList = []  # TODO: Same as above!!!!!!!!!!!!!
+hallway2_2_3.topviewRightList = []  # TODO: May need to say there are outside exits here
 hallway2_2_3.topviewBelowList = [hallway2_2_2]
-hallway2_2_3.topviewOrderList = ["2212", hallway2_2_2] # TODO: Add connection to next building
+hallway2_2_3.topviewOrderList = ["2212", hallway2_2_2]  # TODO: Add connection to building 3
 
 ####################### Building 2 stuff ends here
 
