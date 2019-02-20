@@ -168,6 +168,32 @@ hallway2_2_3.topviewRightList = []  # TODO: May need to say there are outside ex
 hallway2_2_3.topviewBelowList = [hallway2_2_2]
 hallway2_2_3.topviewOrderList = ["2212", hallway2_2_2]  # TODO: Add connection to building 3
 
+### Floor 3
+staircase2_3_1 = locations.Staircase(id_name="staircase2-3-1")
+staircase2_3_2 = locations.Staircase(id_name="staircase2-3-2")
+elevator2_3_1 = locations.Elevator(id_name="elevator2-3-1")
+hallway2_3_1 = locations.Hallway(id_name="hallway2-3-1")
+
+staircase2_3_1.adjList = [hallway2_3_1, staircase2_2_1, staircase2_1_1]
+
+staircase2_3_2.adjList = [hallway2_3_1]
+
+elevator2_3_1.adjList = [hallway2_3_1, elevator2_2_1, elevator2_1_1]
+
+hallway2_3_1.roomList = ["2325", "2327", "2337", "2314", "2316", "2318", "2320", "2322", "2326",
+                         "2328", "2332", "2336"]
+hallway2_3_1.adjList = [staircase2_3_1, elevator2_3_1, staircase2_3_2]
+hallway2_3_1.length = len(hallway2_3_1.adjList)
+hallway2_3_1.topviewLeftList = [staircase2_3_1]
+hallway2_3_1.topviewAboveList = ["2325", "2327", "2337"]
+hallway2_3_1.topviewRightList = [staircase2_3_2]
+hallway2_3_1.topviewBelowList = [elevator2_3_1, "2314", "2316", "2318", "2320", "2322", "2326",
+                                 "2328", "2332", "2336"]
+hallway2_3_1.topviewOrderList = [staircase2_3_1, "2325", "2327", "2337", staircase2_3_2,
+                                 "2336", "2332", "2328", "2326", "2322", "2320", "2318", "2316",
+                                 "2314", elevator2_3_1]
+
+
 ####################### Building 2 stuff ends here
 
 staircase1_2.adjList = [hallway1_2]
