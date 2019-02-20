@@ -66,8 +66,10 @@ hallway1_2.topviewRightList = []
 hallway1_2.topviewOrderList = ["1130", "1110C", "1109", "1107", "1110B", "1110A", "1110", "1103"]
 # New stuff ends here
 
-##################### Reid's stuff starts here
+##################### Building 2 stuff starts here
 
+
+### Floor 1
 # Building 2 Floor 1 Initialize data
 staircase2_1 = locations.Staircase(id_name="staircase2-1")
 hallway2_1 = locations.Hallway(id_name="hallway2-1")
@@ -122,14 +124,17 @@ hallway2_5.roomList = ["2127", "2126", "2125", "2124", "2123", "2122"]
 hallway2_5.adjList = [hallway2_3]
 hallway2_5.length = 6
 hallway2_5.topviewLeftList = ["2127"]
-hallway2_5.topviewAboveLIst = []
+hallway2_5.topviewAboveLIst = [hallway2_3, "2122"]
+hallway2_5.topviewRightList = ["2123"]
+hallway2_5.topviewBelowList = ["2126", "2125", "2124"]
 
+### Floor 2
 
 
 
 # zee
 
-####################### Reid's stuff ends here
+####################### Building 2 stuff ends here
 
 staircase1_2.adjList = [hallway1_2]
 
