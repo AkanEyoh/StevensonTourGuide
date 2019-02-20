@@ -111,8 +111,28 @@ staircase1_2_2.adjList = [hallway1_2_2, staircase1_1_2]
 staircase1_2_2.floor = 2
 
 
-
 stevenson_math = [staircase1_1_1, staircase1_1_2, elevator1_1, hallway1_1_1, hallway1_1_2, staircase1_2_1, staircase1_2_2, elevator1_2, hallway1_2_1, hallway1_2_2]
+
+#########################
+## Building 2 (MOLEC. BIO) Locations##
+#########################
+## Floor 1 Locations 
+staircase2_1_1 = locations.Staircase(id_name="staircase2-1-1")
+
+hallway2_1_1 = locations.Hallway(id_name="hallway2-1-1")
+
+hallway2_1_2 = locations.Hallway(id_name="hallway2-1-2")
+
+hallway2_1_3 = locations.Hallway(id_name="hallway2-1-3")
+
+hallway2_1_4 = locations.Hallway(id_name="hallway2-1-4")
+
+
+elevator1_1 = locations.Elevator(id_name="elevator1-1")
+
+hallway1_1_2 = locations.Hallway(id_name="hallway1-1-2")
+
+staircase1_1_2 = locations.Staircase(id_name="staircase1-1-2")
 
 graph = stevenson_math
 
