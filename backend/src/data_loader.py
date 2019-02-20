@@ -44,7 +44,7 @@ staircase1_1.adjList = [hallway1_1]
 
 hallway1_1.roomList = ["1113", "1114", "1115", "1117", "1118", "1120", "1122"]
 hallway1_1.adjList = [staircase1_1, elevator1, hallway1_2]
-hallway1_1.length = 7
+hallway1_1.length = len(hallway1_1.roomList)
 hallway1_1.topviewAboveList = ["1120", staircase1_1, "1118", "1114"]
 hallway1_1.topviewBelowList = ["1117", "1115", "1113", elevator1]
 hallway1_1.topviewLeftList = ["1122"]
@@ -58,7 +58,7 @@ hallway1_2.roomList = ["1103", "1107", "1109", "1110", "1110A", "1110B",
                        "1110C", "1130"]
 # New stuff starts here
 hallway1_2.adjList = [staircase1_2, elevator1, hallway1_1]
-hallway1_2.length = 8
+hallway1_2.length = len(hallway1_2.adjList)
 hallway1_2.topviewAboveList = ["1130", "1110C", "1110B", "1110A", "1110"]
 hallway1_2.topviewBelowList = ["1109", "1107", "1103"]
 hallway1_2.topviewLeftList = [hallway1_1]
