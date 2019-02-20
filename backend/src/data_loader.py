@@ -125,7 +125,7 @@ hallway2_1_5.roomList = ["2127", "2126", "2125", "2124", "2123", "2122"]
 hallway2_1_5.adjList = [hallway2_1_3]
 hallway2_1_5.length = len(hallway2_1_5.roomList)
 hallway2_1_5.topviewLeftList = ["2127"]
-hallway2_1_5.topviewAboveLIst = [hallway2_1_3, "2122"]
+hallway2_1_5.topviewAboveList = [hallway2_1_3, "2122"]
 hallway2_1_5.topviewRightList = ["2123"]
 hallway2_1_5.topviewBelowList = ["2126", "2125", "2124"]
 hallway2_1_5.topviewOrderList = ["2127", hallway2_1_3, "2122", "2123", "2124", "2125", "2126"]
@@ -144,13 +144,29 @@ elevator2_2_1.adjList = [hallway2_2_1, elevator2_1_1]
 hallway2_2_1.roomList = ["2220"]
 hallway2_2_1.adjList = [staircase2_2_1, elevator2_2_1]
 hallway2_2_1.length = len(hallway2_2_1.roomList)
-hallway2_2_1 = []
-hallway2_2_1 = []
-hallway2_2_1 = []
-hallway2_2_1 = []
-hallway2_2_1 = []
+hallway2_2_1.topviewLeftList = [staircase2_2_1]
+hallway2_2_1.topviewAboveList = [hallway2_1_2]
+hallway2_2_1.topviewRightList = ["2220"]
+hallway2_2_1.topviewBelowList = [elevator2_2_1]
+hallway2_2_1.topviewOrderList = [staircase2_2_1, hallway2_1_2, "2220", elevator2_2_1]
 
-# zee
+hallway2_2_2.roomList = ["2200", "2212"]
+hallway2_2_2.adjList = [hallway2_2_1, hallway2_2_3]
+hallway2_2_2.length = len(hallway2_2_2.roomList)
+hallway2_2_2.topviewLeftList = ["2200"]
+hallway2_2_2.topviewAboveList = ["2212"]
+hallway2_2_2.topviewRightList = [hallway2_2_3]
+hallway2_2_2.topviewBelowList = [hallway2_2_1]
+hallway2_2_2.topviewOrderList = ["2200", "2212", hallway2_2_3, hallway2_2_1]
+
+hallway2_2_3.roomList = ["2212"]
+hallway2_2_3.adjList = [hallway2_2_2] # TODO: connect to building 3/4 (whichever is next to here)
+hallway2_2_3.length = len(hallway2_2_3.roomList)
+hallway2_2_3.topviewLeftList = ["2212"]
+hallway2_2_3.topviewAboveList = [] # TODO: Same as above!!!!!!!!!!!!!
+hallway2_2_3.topviewRightList = [] # TODO: May need to say there are outside exits here
+hallway2_2_3.topviewBelowList = [hallway2_2_2]
+hallway2_2_3.topviewOrderList = ["2212", hallway2_2_2] # TODO: Add connection to next building
 
 ####################### Building 2 stuff ends here
 
