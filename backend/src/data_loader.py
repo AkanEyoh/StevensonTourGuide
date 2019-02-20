@@ -81,9 +81,10 @@ hallway2_1_5 = locations.Hallway(id_name="hallway2-1-5")
 
 # Load data
 staircase2_1_1.adjList = [hallway2_1_1]
+
 hallway2_1_1.roomList = ["2100A", "2102", "2102A", "2102B", "2107"]
 hallway2_1_1.adjList = [staircase2_1_1, hallway2_1_2, elevator2_1_1]
-hallway2_1_1.length = 5
+hallway2_1_1.length = len(hallway2_1_1.roomList)
 hallway2_1_1.topviewAboveList = [hallway2_1_2]
 hallway2_1_1.topviewBelowList = ["2100A", "2102", "2102A", "2102B", "2107"]
 hallway2_1_1.topViewLeftList = []
@@ -93,7 +94,7 @@ hallway2_1_1.topviewOrderList = ["2100A", "2102", "2102A", "2102B", "2107"]
 # hallway2_1_2.adjList = [hallway2_1_1]
 hallway2_1_2.roomList = ["2101", "2105", "2104", "2106", "2120", "2121", "2129", "2128"]
 hallway2_1_2.adjList = [hallway2_1_1, hallway2_1_3]
-hallway2_1_2.length = 8
+hallway2_1_2.length = len(hallway2_1_2.roomList)
 hallway2_1_2.topviewAboveList = ["2105", "2121"]
 hallway2_1_2.topviewBelowList = ["2100A", "2102", "2102A", "2102B", "2107"]
 hallway2_1_2.topViewLeftList = ["2101"]
@@ -104,7 +105,7 @@ hallway2_1_2.topviewOrderList = ["2101", hallway2_1_1, "2105", "2104", "2106", "
 # hallway2_1_3.adjList = [hallway2_1_2, hallway2_1_4]
 hallway2_1_3.roomList = ["2126", "2127"]
 hallway2_1_3.adjList = [hallway2_1_2, hallway2_1_4, hallway2_1_5]
-hallway2_1_3.length = 2
+hallway2_1_3.length = len(hallway2_1_3.roomList)
 hallway2_1_3.topviewLeftList = [hallway2_1_4]
 hallway2_1_3.topviewAboveList = []
 hallway2_1_3.topviewRightList = ["2126", hallway2_1_5]
@@ -113,7 +114,7 @@ hallway2_1_3.topviewOrderList = ["2121", hallway2_1_4, hallway2_1_5, "2126", "21
 
 hallway2_1_4.roomList = ["2121", "2122"]
 hallway2_1_4.adjList = [hallway2_1_3]
-hallway2_1_4.length = 2
+hallway2_1_4.length = len(hallway2_1_4)
 hallway2_1_4.topviewLeftList = ["2121"]
 hallway2_1_4.topviewAboveList = []
 hallway2_1_4.topviewRightList = ["2122"]
@@ -122,7 +123,7 @@ hallway2_1_4.topviewOrderList = ["2121", "2122", hallway2_1_3]
 
 hallway2_1_5.roomList = ["2127", "2126", "2125", "2124", "2123", "2122"]
 hallway2_1_5.adjList = [hallway2_1_3]
-hallway2_1_5.length = 6
+hallway2_1_5.length = len(hallway2_1_5.roomList)
 hallway2_1_5.topviewLeftList = ["2127"]
 hallway2_1_5.topviewAboveLIst = [hallway2_1_3, "2122"]
 hallway2_1_5.topviewRightList = ["2123"]
@@ -134,10 +135,15 @@ staircase2_2_1 = locations.Staircase(id_name="staircase2-2-1")
 elevator2_2_1 = locations.Elevator(id_name="elevator2-2-1")
 hallway2_2_1 = locations.Hallway(id_name="hallway2-2-1")
 hallway2_2_2 = locations.Hallway(id_name="hallway2-2-2")
+hallway2_2_3 = locations.Hallway(id_name="hallway2-2-3")
 
-hallway2_2_1.roomList = []
-hallway2_2_1 = []
-hallway2_2_1 = []
+staircase2_2_1.adjList = [hallway2_2_1, staircase2_1_1]
+
+elevator2_2_1.adjList = [hallway2_2_1, elevator2_1_1]
+
+hallway2_2_1.roomList = ["2220"]
+hallway2_2_1.adjList = [staircase2_2_1, elevator2_2_1]
+hallway2_2_1.length = len(hallway2_2_1.roomList)
 hallway2_2_1 = []
 hallway2_2_1 = []
 hallway2_2_1 = []
