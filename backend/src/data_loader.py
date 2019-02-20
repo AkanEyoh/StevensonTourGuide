@@ -71,18 +71,18 @@ hallway1_2.topviewOrderList = ["1130", "1110C", "1109", "1107", "1110B", "1110A"
 
 ### Floor 1
 # Building 2 Floor 1 Initialize data
-staircase2_1 = locations.Staircase(id_name="staircase2-1")
+staircase2_1_1 = locations.Staircase(id_name="staircase2-1-1")
 hallway2_1_1 = locations.Hallway(id_name="hallway2-1-1")
 hallway2_1_2 = locations.Hallway(id_name="hallway2-1-2")
-elevator2_1 = locations.Elevator(id_name="elevator2-1")
+elevator2_1_1 = locations.Elevator(id_name="elevator2-1-1")
 hallway2_1_3 = locations.Hallway(id_name="hallway2-1-3")
 hallway2_1_4 = locations.Hallway(id_name="hallway2-1-4")
 hallway2_1_5 = locations.Hallway(id_name="hallway2-1-5")
 
 # Load data
-staircase2_1.adjList = [hallway2_1_1]
+staircase2_1_1.adjList = [hallway2_1_1]
 hallway2_1_1.roomList = ["2100A", "2102", "2102A", "2102B", "2107"]
-hallway2_1_1.adjList = [staircase2_1, hallway2_1_2, elevator2_1]
+hallway2_1_1.adjList = [staircase2_1_1, hallway2_1_2, elevator2_1_1]
 hallway2_1_1.length = 5
 hallway2_1_1.topviewAboveList = [hallway2_1_2]
 hallway2_1_1.topviewBelowList = ["2100A", "2102", "2102A", "2102B", "2107"]
@@ -98,8 +98,8 @@ hallway2_1_2.topviewAboveList = ["2105", "2121"]
 hallway2_1_2.topviewBelowList = ["2100A", "2102", "2102A", "2102B", "2107"]
 hallway2_1_2.topViewLeftList = ["2101"]
 hallway2_1_2.topviewRightList = [hallway2_1_3]
-hallway2_1_2.topviewOrderList = ["2101", hallway2_1_1, "2105", "2104", "2106", "2121", "2129", "2128",
-                               hallway2_1_3]
+hallway2_1_2.topviewOrderList = ["2101", hallway2_1_1, "2105", "2104", "2106", "2121", "2129",
+                                 "2128", hallway2_1_3]
 
 # hallway2_1_3.adjList = [hallway2_1_2, hallway2_1_4]
 hallway2_1_3.roomList = ["2126", "2127"]
@@ -130,10 +130,12 @@ hallway2_1_5.topviewBelowList = ["2126", "2125", "2124"]
 hallway2_1_5.topviewOrderList = ["2127", hallway2_1_3, "2122", "2123", "2124", "2125", "2126"]
 
 ### Floor 2
+staircase2_2_1 = locations.Staircase(id_name="staircase2-2-1")
+elevator2_2_1 = locations.Elevator(id_name="elevator2-2-1")
 hallway2_2_1 = locations.Hallway(id_name="hallway2-2-1")
 hallway2_2_2 = locations.Hallway(id_name="hallway2-2-2")
 
-hallway2_2_1 = []
+hallway2_2_1.roomList = []
 hallway2_2_1 = []
 hallway2_2_1 = []
 hallway2_2_1 = []
