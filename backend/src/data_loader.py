@@ -194,6 +194,33 @@ hallway2_3_1.topviewOrderList = [staircase2_3_1, "2325", "2327", "2337", stairca
                                  "2314", elevator2_3_1]
 
 
+## Floor 4
+staircase2_4_1 = locations.Staircase(id_name="staircase2-4-1")
+staircase2_4_2 = locations.Staircase(id_name="staircase2-4-2")
+elevator2_4_1 = locations.Elevator(id_name="elevator2-4-1")
+hallway2_4_1 = locations.Hallway(id_name="hallway2-4-1")
+hallway2_4_2 = locations.Hallway(id_name="hallway2-4-2")
+hallway2_4_3 = locations.Hallway(id_name="hallway2-4-3")
+
+staircase2_4_1.adjList = [hallway2_4_2, staircase2_3_1, staircase2_2_1, staircase2_1_1]
+
+staircase2_4_2.adjList = [hallway2_4_2, staircase2_3_2]
+
+elevator2_4_1.adjList = [hallway2_4_1, elevator2_3_1, elevator2_2_1, elevator2_1_1]
+
+hallway2_4_1.roomList = ["2402", "2401", "2442"] #TODO Could make conflict since this room is techinically part of the other hallway in a way
+hallway2_4_1.adjList = [elevator2_4_1, hallway2_4_2]
+hallway2_4_1.length = len(hallway2_4_1.roomList)
+hallway2_4_1.topviewLeftList = ["2402"]
+hallway2_4_1.topviewAboveList = ["2401"]
+hallway2_4_1.topviewRightList = ["2442"]
+hallway2_4_1.topviewBelowList = ["2442"]
+hallway2_4_1.topviewOrderList = ["2402", hallway2_4_2, "2401", "2442", elevator2_4_1]
+
+hallway2_4_2.roomList = []
+
+
+
 ####################### Building 2 stuff ends here
 
 staircase1_2.adjList = [hallway1_2]
