@@ -217,8 +217,18 @@ hallway2_4_1.topviewRightList = ["2442"]
 hallway2_4_1.topviewBelowList = ["2442"]
 hallway2_4_1.topviewOrderList = ["2402", hallway2_4_2, "2401", "2442", elevator2_4_1]
 
-hallway2_4_2.roomList = []
-
+hallway2_4_2.roomList = ["2402", "2401", "2413", "2401B", "2417", "2425", "2431", "2433", "2435",
+        "2437", "2439", "2442", "2438", "2434", "2430", "2426", "2422", "2418", "2416", "2414"] #TODO Please recheck the map for room 2433, it's a little vuage
+hallway2_4_2.adjList = [staircase2_4_1, hallway2_4_3, staircase2_4_2]
+hallway2_4_2.length = len(hallway2_4_2.roomList)
+hallway2_4_2.topviewLeftList = ["2402"]
+hallway2_4_2.topviewAboveList = ["2401", "2413", "2401B", "2417", "2425", "2431", "2433",
+        "2435", "2437", "2439", hallway2_4_3]
+hallway2_4_2.topviewRightList = ["2442"]
+hallway2_4_2.topviewBelowList = [staircase2_4_2, "2438", "2434", "2430", "2426", "2422", "2418",
+        "2416", "2414", hallway2_4_1, staircase2_4_1]
+hallway2_4_2.topviewOrderList = ["2402", "2401", "2413", "2401B", "2417", "2425", "2431", "2433",
+        "2435", "2437", "2439", hallway2_4_3, "2442"]
 
 
 ####################### Building 2 stuff ends here
