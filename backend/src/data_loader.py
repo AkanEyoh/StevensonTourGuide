@@ -1,31 +1,33 @@
 ## Author(s): Akaninyene Eyoh, Daniel Yan, Reid Wilson, Keaton Ufheil
 ## Date: 2018-11-06
-## Email: akaninyene.e.eyoh@vanderbilt.edu, daniel.yan@vanderbilt.edu
+## Email: akaninyene.e.eyoh@vanderbilt.edu, daniel.yan@vanderbilt.edu, 
+## reid.wilson@vanderbilt.edu, keaton.ufheil@vanderbilt.edu
 ## Filename: dataLoader.py
 ## Description: Loads the data for adjacency lists and room lists into in
-# each location type.
+## each location type.
 
 ## Format:
-## Hallways are split down the middle and separated by an elevator, however
+#  Hallways are split down the middle and separated by an elevator, however
 #  hallways on the same floor still act as
 #  adjacent nodes to each other.
 
 ## Naming Convention:
-## staircaseX_Y: X = floor number, Y = end of hallway (1 = bottom half,
-# 2 = top half)
-## hallwayX_Y: X = floor number, Y = end of hallway (1 = bottom half, 2 = top
+#  building_staircaseX_Y: X = floor number, Y = end of hallway (1 = bottom half,
+#  2 = top half)
+#  building_hallwayX_Y: X = floor number, Y = end of hallway (1 = bottom half, 2 = top
 #  half)
-## elevatorX: X = which floor an elevator stops at
+#  building_elevatorX: X = which floor an elevator stops at
 
 ## Determining length of hallway was relative to how many classrooms were in
-# 1 hallway.
+# 1 hallway. (i.e. 7 = hallway with 7 rooms)
 
 from src import locations
 
 #########################
 ## Initialize Locations##
 #########################
-## Floor 1 Locations 
+
+## Math Floor 1 Locations 
 math_staircase1_1 = locations.Staircase(id_name="math_staircase1-1")
 
 math_hallway1_1 = locations.Hallway(id_name="math_hallway1-1")
@@ -36,10 +38,11 @@ math_hallway1_2 = locations.Hallway(id_name="math_hallway1-2")
 
 math_staircase1_2 = locations.Staircase(id_name="math_staircase1-2")
 
-## Floor 2 Locations
+## Math Floor 2 Locations
 math_staircase2_1 = locations.Staircase(id_name="math_staircase2-1")
 
 math_hallway2_1 = locations.Hallway(id_name="math_hallway2-1")
+
 math_elevator2 = locations.Elevator(id_name="math_elevator2")
 
 # back area that leads outside
@@ -47,7 +50,7 @@ math_hallway2_2 = locations.Hallway(id_name="math_hallway2-2")
 
 math_staircase2_2 = locations.Staircase(id_name="math_staircase2-2")
 
-# Floor 3 Locations
+# Math Floor 3 Locations
 math_staircase3_1 = locations.Staircase(id_name="math_staircase3-1")
 
 math_hallway3_1 = locations.Hallway(id_name="math_hallway3-1")
@@ -58,7 +61,7 @@ math_hallway3_2 = locations.Hallway(id_name="math_hallway3-2")
 
 math_staircase3_2 = locations.Staircase(id_name="math_staircase3-2")
 
-# Floor 4 Locations
+# Math Floor 4 Locations
 math_staircase4_1 = locations.Staircase(id_name="math_staircase4-1")
 
 math_hallway4_1 = locations.Hallway(id_name="math_hallway4-1")
@@ -97,7 +100,7 @@ math_hallway1_1.roomList = ["1113", "1114", "1115", "1117", "1118", "1120", "112
 math_hallway1_1.adjList = [math_staircase1_1, math_elevator1, math_hallway1_2]
 math_hallway1_1.length = 7
 math_hallway1_1.topviewAboveList = ["1120", math_staircase1_1, "1118", "1114"]
-math_hallway1_1.topviewBelowList = ["1117", "1115", "1113", math_elevator1_1]
+math_hallway1_1.topviewBelowList = ["1117", "1115", "1113", math_elevator1]
 math_hallway1_1.topviewLeftList = ["1122"]
 math_hallway1_1.topviewRightList = [math_hallway1_2]
 math_hallway1_1.topviewOrderList = ["1122", "1120", "1117", math_staircase1_1, "1118", "1115", "1114", "1113", math_elevator1_1]
@@ -109,6 +112,11 @@ math_hallway1_2.roomList = ["1103", "1107", "1109", "1110", "1110A", "1110B",
                        "1110C", "1130"]
 math_hallway1_2.adjList = [math_staircase1_2, math_elevator1, math_hallway1_1, bio_hallway2_1]
 math_hallway1_2.length = 8
+math_hallway1_2.topviewAboveList = [math_staircase1_2, "1110C", "1110B", "1110A", "1110"]
+math_hallway1_2.topviewBelowList = [math_elevator1, "1109", "1107", "1103"]
+math_hallway1_2.topviewLeftList = [math_hallway1_1]
+math_hallway1_2.topviewRightList = []
+math_hallway1_2.topviewOrderList = [math_staircase1_2, math_elevator1, "1110C", "1109", "1107", "1110B", "1110A", "1110", "1103", math_staircase1_2]
 
 math_staircase1_2.adjList = [math_hallway1_2, math_staircase2_2]
 
@@ -119,6 +127,11 @@ math_hallway2_1.roomList = ["1210", "1214", "1216", "1220", "1221", "1222", "122
                        "1227", "1232"]
 math_hallway2_1.adjList = [math_staircase2_1, math_elevator2, math_hallway2_2]
 math_hallway2_1.length = 9
+math_hallway2_1.topviewAboveList = ["1232", math_staircase2_1, "1224", "1222", "1220", "1218"]
+math_hallway2_1.topviewBelowList = ["1225", math_elevator2]
+math_hallway2_1.topviewLeftList = []
+math_hallway2_1.topviewRightList = [hallway1_2_2]
+math_hallway2_1.topviewOrderList = ["1232", math_staircase2_1, "1224", "1222", "1225", "1220", math_elevator2, "1218"]
 
 math_elevator2.adjList = [math_hallway2_1, math_hallway2_2 math_elevator1, math_elevator3, math_elevator4, math_elevator5]
 

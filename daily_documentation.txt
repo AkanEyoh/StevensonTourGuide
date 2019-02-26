@@ -76,4 +76,8 @@ between 2 buildings, etc.)
 frontend running sucessfully, navigation between Math building and Bio building working 
 successfully 
 
+2/20/19
+- team met on site in Stevenson to look at a few confusing structures around building
+- worked on improving display of frontend
+
 */
