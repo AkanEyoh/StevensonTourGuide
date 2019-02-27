@@ -9,8 +9,9 @@ import shortest_path
 # this is the function that takes in a view and returns 
 def get_route(request, start, end):
 
-    # this calls on the shortest path function to return the shortest path as a list of objects
-    directions = shortest_path.get_directions(start, end)
+    # get directions as text along with the paths to the images
+    # associated with the path to take
+    directions, image_paths = shortest_path.get_directions(start, end)
 
     if not directions:
         ret_value = {}

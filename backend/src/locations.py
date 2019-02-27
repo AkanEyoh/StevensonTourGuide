@@ -46,6 +46,8 @@ class Hallway(Location):
         self.topviewLeftList = topviewLeftList
         self.topviewRightList= topviewRightList
         self.topviewOrderList = topviewOrderList
+        # to be set when traversed for directions
+        self.directionTraversed = None
 
     # functions that operate on the rooms of a hallway
     def get_room_list(self):

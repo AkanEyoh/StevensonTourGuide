@@ -250,10 +250,12 @@ def path_to_string(path, start, dest):
                 # no turn necessary
                 path_string.append('Walk straight ahead.');
                 cur_direction = 'right'
-
+                next_loc.directionTraversed = cur_direction
+                
             elif cur_loc in next_loc.topviewRightList:
                 path_string.append('Continue straight ahead.')
                 cur_direction = 'left'
+                next_loc.directionTraversed = cur_direction
 
             else:
                 try:
@@ -311,5 +313,10 @@ def path_to_string(path, start, dest):
 
     return path_string
 
+def get_image_paths(path):
+    
+
 def get_directions(startRoom, endRoom):
-    return path_to_string(get_path_from_rooms(startRoom, endRoom), startRoom, endRoom)
+    path = get_path_from_rooms(startRoom, endRoom)
+    image_paths = get_image_paths(path)
+    return path_to_string(path, startRoom, endRoom), image_paths
