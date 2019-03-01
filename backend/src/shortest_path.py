@@ -82,13 +82,16 @@ def shortest_path(graph, start):
     # Return map of paths
     return paths
 
-
-# Dictionary containing mapping each location in Stevenson to shortest path
-# map for each location.
 stevenson_paths = dict()
-for location in dl.graph:
-    stevenson_paths[location] = shortest_path(graph=dl.graph, start=location)
 
+def createPaths(staircaseLength, elevatorLength):
+    locations.Staircase.length = staircaseLength
+    locations.Elevator.length = elevatorLength
+    locations.Staircase
+    for location in dl.graph:
+        stevenson_paths[location] = shortest_path(graph=dl.graph, start=location)
+
+createPaths(locations.DEFAULT_STAIRCASE_LENGTH, locations.DEFAULT_ELEVATOR_LENGTH)
 
 def get_path_from_rooms(start_room, end_room):
     """
@@ -216,7 +219,7 @@ def turn_from_hallway(hallway, intermed_dest, direction):
     dest_at_top = intermed_dest in hallway.topviewAboveList 
     if intermed_dest in hallway.topviewLeftList + hallway.topviewRightList:
         return 'straight ahead'
-    elif dest_at_top and direction == 'right' or not dest_at_top and direction == 'left':
+    elif (dest_at_top and direction == 'right') or (not dest_at_top and direction == 'left'):
         return 'left'
     else:
         return 'right'
@@ -286,7 +289,7 @@ def path_to_string(path, start, dest):
 
         # check if the user needs to turn from the hallway into the next location
         elif is_hallway_exit(cur_loc, next_loc):
-            path_string.append('Enter ' + next_loc.to_string() + ' which will be on your ' + turn_from_hallway(cur_loc, dest, cur_direction) + '.')
+            path_string.append('Enter ' + next_loc.to_string() + ' which will be on your ' + turn_from_hallway(cur_loc, next_loc, cur_direction) + '.')
 
         # user entering elevator
         elif all(map(is_elevator, [cur_loc, next_loc])):
@@ -314,7 +317,8 @@ def path_to_string(path, start, dest):
     return path_string
 
 def get_image_paths(path):
-    
+    #TODO: actually generate paths
+    return ''; 
 
 def get_directions(startRoom, endRoom):
     path = get_path_from_rooms(startRoom, endRoom)
