@@ -189,5 +189,29 @@ class TestBuilding2(unittest.TestCase):
         self.assertEqual(directions('2336', '2121'), exp('tkl Te,2-3,l e1 wstr tkr destl'))
 
 
+# Building three is the floor with the Engineering Library and only has 1 floor
+class TestBuilding3(unittest.TestCase):
+
+    def test_sameFloor(self):
+        self.assertEqual(directions('3218', '3210'), exp('tkl destl'))
+        self.assertEqual(directions('3216', '3205'), exp('tkl destr'))
+        self.assertEqual(directions('3212', '3222'), exp('tkr deststr'))
+        self.assertEqual(directions('3210', '3212'), exp('tkr destr'))
+
+
+# this building contains the two large lecture halls and has only two floors
+class TestBuilding4(unittest.TestCase):
+
+    def test_sameFloor(self):
+        # floor 1
+        self.assertEqual(directions('4219', '4221'), exp('tkl destl'))
+        self.assertEqual(directions('4221', '4219'), exp('tkr destr'))
+
+    def test_betweenFloorStairs(self):
+        switchToStairs()
+        self.assertEqual(directions('4221', '4327'), exp('tkr Ts,4-2-1,l u1 wstr deststr'))
+        self.assertEqual(directions('4219', '4327'), exp('wstr Ts,4-2-1,l u1 wstr deststr'))
+        
+
 if __name__ == '__main__':
     unittest.main()
