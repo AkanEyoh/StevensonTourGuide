@@ -241,6 +241,7 @@ def path_to_string(path, start, dest):
     cur_direction = None
     cur_loc = start
     path_string = []
+    urls = []
     while len(path) != 0:
         next_loc = path[0]
         path = path[1:]
@@ -254,11 +255,13 @@ def path_to_string(path, start, dest):
                 path_string.append('Walk straight ahead.');
                 cur_direction = 'right'
                 next_loc.directionTraversed = cur_direction
+                urls.append(next_loc.get_url(cur_direction))
                 
             elif cur_loc in next_loc.topviewRightList:
                 path_string.append('Continue straight ahead.')
                 cur_direction = 'left'
                 next_loc.directionTraversed = cur_direction
+                urls.append(next_loc.get_url(cur_direction))
 
             else:
                 try:
@@ -269,7 +272,8 @@ def path_to_string(path, start, dest):
                     if ret[1]:
                         cur_direction = 'left'
                     else:
-                        cur_direction = 'right' 
+                        cur_direction = 'right'
+                    urls.append(next_loc.get_url(cur_direction))
 
                 except IndexError: 
                     ret = find_turn(cur_loc, next_loc, dest)
@@ -278,6 +282,7 @@ def path_to_string(path, start, dest):
                         cur_direction = 'left'
                     else:
                         cur_direction = 'right'
+                    urls.append(next_loc.get_url(cur_direction))
 
         # check if this is the final hallway -- if so, the final direction needs to be given
         if len(path) == 0:
@@ -286,10 +291,12 @@ def path_to_string(path, start, dest):
                 path_string.append('Your destination is ' + turn_direction + '.')
             else:
                 path_string.append('Your destination is on the ' + turn_direction + '.')
+            urls.append(dest)
 
         # check if the user needs to turn from the hallway into the next location
         elif is_hallway_exit(cur_loc, next_loc):
             path_string.append('Enter ' + next_loc.to_string() + ' which will be on your ' + turn_from_hallway(cur_loc, next_loc, cur_direction) + '.')
+            urls.append(next_loc.get_url())
 
         # user entering elevator
         elif all(map(is_elevator, [cur_loc, next_loc])):
@@ -314,13 +321,9 @@ def path_to_string(path, start, dest):
         # change of guard
         cur_loc = next_loc
 
-    return path_string
+    return path_string, urls
 
-def get_image_paths(path):
-    #TODO: actually generate paths
-    return ''; 
 
 def get_directions(startRoom, endRoom):
     path = get_path_from_rooms(startRoom, endRoom)
-    image_paths = get_image_paths(path)
-    return path_to_string(path, startRoom, endRoom), image_paths
+    return path_to_string(path, startRoom, endRoom)

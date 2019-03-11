@@ -211,7 +211,7 @@ class TestBuilding4(unittest.TestCase):
         switchToStairs()
         self.assertEqual(directions('4221', '4327'), exp('tkr Ts,4-2-1,l u1 wstr deststr'))
         self.assertEqual(directions('4219', '4327'), exp('wstr Ts,4-2-1,l u1 wstr deststr'))
-        
+
 
 if __name__ == '__main__':
     unittest.main()

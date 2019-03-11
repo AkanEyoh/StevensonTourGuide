@@ -12,14 +12,19 @@ DEFAULT_STAIRCASE_LENGTH = 1
 DEFAULT_ELEVATOR_LENGTH = 10
 DEFAULT_HALLWAY_LENGTH = 5
 DEFAULT_ID = ""
+NUMBER_TO_BUILDING = {
+    '1': 'math',
+    '2': 'molecbio'
+}
 
 
 # defines a parent class for location
 # this stores an adjacency list and provides a mechanism for accessing them
 class Location:
-    def __init__(self, adjList=[], id_name=DEFAULT_ID):
+    def __init__(self, adjList=[], id_name=DEFAULT_ID, url_base=0):
         self.adjList = adjList
         self.id_name = id_name
+        self.url_base = url_base
 
     # adds the adjacency list to the locations
     def set_adj_list(self, adjList):
@@ -35,8 +40,8 @@ class Location:
 # defines a hallway class that extends Location
 # this stores an adjacency list, room list, and the length of the hallway
 class Hallway(Location):
-    def __init__(self, adjList=[], roomList=[], topviewAboveList=[], topviewBelowList=[], topviewLeftList=[], topviewRightList=[], topviewOrderList=[], length=DEFAULT_HALLWAY_LENGTH, id_name=DEFAULT_ID):
-        super().__init__(adjList=adjList, id_name=id_name)
+    def __init__(self, adjList=[], roomList=[], topviewAboveList=[], topviewBelowList=[], topviewLeftList=[], topviewRightList=[], topviewOrderList=[], length=DEFAULT_HALLWAY_LENGTH, id_name=DEFAULT_ID,url_base=0):
+        super().__init__(adjList=adjList, id_name=id_name, url_base=url_base)
         self.length = length
         self.roomList = roomList
         self.topviewAboveList = topviewAboveList
@@ -61,17 +66,23 @@ class Hallway(Location):
     def set_length(self, length):
         self.length = length
 
+    def get_url(self, direction):
+        return NUMBER_TO_BUILDING[self.url_base[0]] + '_' + 'hallway_' + self.url_base[2:]
+
 
 # this defines an elevator class
 # the elevator does not have rooms attached to it
 # default length set to 1.1 so that stairs are preferred
 class Elevator(Location):
     length = DEFAULT_ELEVATOR_LENGTH
-    def __init__(self, adjList=[], id_name=DEFAULT_ID):
-        super().__init__(adjList=adjList, id_name=id_name)
+    def __init__(self, adjList=[], id_name=DEFAULT_ID, url_base=''):
+        super().__init__(adjList=adjList, id_name=id_name, url_base=url_base)
 
     def get_floor(self):
         return self.floor
+
+    def get_url(self):
+        return NUMBER_TO_BUILDING[self.url_base[0]] + '_' + 'elevator_' + self.url_base[2:]
 
 
 # this defines a staircase class
@@ -79,8 +90,11 @@ class Elevator(Location):
 # default length set to 1
 class Staircase(Location):
     length = DEFAULT_STAIRCASE_LENGTH
-    def __init__(self, adjList=[], id_name=DEFAULT_ID):
-        super().__init__(adjList=adjList, id_name=id_name)
+    def __init__(self, adjList=[], id_name=DEFAULT_ID, url_base=''):
+        super().__init__(adjList=adjList, id_name=id_name, url_base=url_base)
 
     def get_floor(self):
         return self.floor
+
+    def get_url(self):
+        return NUMBER_TO_BUILDING[self.url_base[0]] + '_' + 'staircase_' + self.url_base[2:]
