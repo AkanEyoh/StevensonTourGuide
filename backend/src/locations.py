@@ -67,7 +67,8 @@ class Hallway(Location):
         self.length = length
 
     def get_url(self, direction):
-        return NUMBER_TO_BUILDING[self.url_base[0]] + '_' + 'hallway_' + self.url_base[2:]
+        view = 'v1' if direction else 'v2'
+        return NUMBER_TO_BUILDING[self.url_base[0]] + '_' + 'hallway_' + self.url_base[2:] + view + '.jpg'
 
 
 # this defines an elevator class
@@ -82,7 +83,7 @@ class Elevator(Location):
         return self.floor
 
     def get_url(self):
-        return NUMBER_TO_BUILDING[self.url_base[0]] + '_' + 'elevator_' + self.url_base[2:]
+        return NUMBER_TO_BUILDING[self.url_base[0]] + '_' + 'elevator_' + self.url_base[2:] + '.jpg'
 
 
 # this defines a staircase class
@@ -97,4 +98,4 @@ class Staircase(Location):
         return self.floor
 
     def get_url(self):
-        return NUMBER_TO_BUILDING[self.url_base[0]] + '_' + 'staircase_' + self.url_base[2:]
+        return NUMBER_TO_BUILDING[self.url_base[0]] + '_' + 'staircase_' + self.url_base[2:] + '.jpg'

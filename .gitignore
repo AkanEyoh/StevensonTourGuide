@@ -7,3 +7,5 @@ venv
 # Pytest files
 .pytest_cache
 __pycache__
+
+./backend/imageServer/node_modules/

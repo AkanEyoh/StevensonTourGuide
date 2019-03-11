@@ -291,7 +291,7 @@ def path_to_string(path, start, dest):
                 path_string.append('Your destination is ' + turn_direction + '.')
             else:
                 path_string.append('Your destination is on the ' + turn_direction + '.')
-            urls.append(dest)
+            urls.append(dest + '.jpg')
 
         # check if the user needs to turn from the hallway into the next location
         elif is_hallway_exit(cur_loc, next_loc):
