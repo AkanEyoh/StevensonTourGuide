@@ -8,4 +8,4 @@ venv
 .pytest_cache
 __pycache__
 
-./backend/imageServer/node_modules/
+**/node_modules
