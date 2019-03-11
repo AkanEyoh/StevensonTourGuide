@@ -231,6 +231,51 @@ hallway2_4_2.topviewOrderList = ["2402", "2401", "2413", "2401B", "2417", "2425"
         "2435", "2437", "2439", hallway2_4_3, "2442"]
 
 
+## Floor 5
+
+staircase2_5_1 = locations.Staircase(id_name="staircase2-5-1")
+staircase2_5_2 = locations.Staircase(id_name="staircase2-5-2")
+elevator2_5_1 = locations.Elevator(id_name="elevator2-5-1")
+hallway2_5_1 = locations.Hallway(id_name="hallway2-5-1")
+hallway2_5_2 = locations.Hallway(id_name="hallway2-5-2")
+hallway2_5_3 = locations.Hallway(id_name="hallway2-5-3")
+hallway2_5_4 = locations.Hallway(id_name="hallway2-5-4")
+
+staircase2_5_1.adjList = [hallway2_5_2, staircase2_4_1, staircase2_3_1,
+                          staircase2_2_1, staircase2_1_1]
+
+staircase2_5_2.adjList = [hallway2_5_2, staircase2_4_2, staircase2_3_2]
+
+elevator2_5_1.adjList = [hallway2_5_1, elevator2_4_1, elevator2_3_1, elevator2_2_1, elevator2_1_1]
+
+hallway2_5_1.roomList = []
+hallway2_5_1.adjList = [elevator2_5_1, hallway2_5_2]
+hallway2_5_1.length = len(hallway2_5_1.roomList)
+hallway2_5_1.topviewLeftList = []
+hallway2_5_1.topviewAboveList = [hallway2_5_2]
+hallway2_5_1.topviewRightList = []
+hallway2_5_1.topviewBelowList = [elevator2_5_1]
+hallway2_5_1.topviewOrderList = [elevator2_5_1, hallway2_5_2]
+
+hallway2_5_2.roomList = ["2501", '2501A', '2513', '2517', '2517A', '2517B', '2517C', '2521',
+                         '2521A', '2521B', '2523', '2523B', '2527', '2527A', '2527B', '2527C',
+                         '2537', '2535', '2542', '2534B', '2534A', '2530', '2528', '2524',
+                         '2522', '2520' '2518', '2516','2514']  # TODO Check on rooms 2521B, 2521A, and 2523B, ESPECIALLY ROOMS 2531 2533
+hallway2_5_2.adjList = [staircase2_5_1, hallway2_5_1, hallway2_5_3, hallway2_5_4, staircase2_5_2]
+hallway2_5_2.length = len(hallway2_5_2.roomList)
+hallway2_5_2.topviewLeftList = []  # TODO Connection to another building
+hallway2_5_2.topviewAboveList = ["2501", '2501A', '2513', '2517', '2517A', '2517B', '2517C',
+                                 '2521', '2521A', '2521B', '2523', '2523B', '2527', '2527A',
+                                 '2527B', '2527C', hallway2_5_3, hallway2_5_4, '2535', '2537',
+                                 '2537C', '2537D', '2537E', '2537G', '2537F']
+hallway2_5_2.topviewRightList = ['2542', '2542A']
+hallway2_5_2.topviewBelowList = [staircase2_5_2, '2534B', '2534A', '2530', '2528', '2524',
+                                 '2524A', '2524B', '2524C', '2522', '2520' '2518', '2516',
+                                 '2514', hallway2_5_1, staircase2_5_1]
+hallway2_5_2.topviewOrderList = []
+
+
+
 ####################### Building 2 stuff ends here
 
 staircase1_2.adjList = [hallway1_2]
