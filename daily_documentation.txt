@@ -97,6 +97,11 @@ successfully
 - Reid continued working on buildings 2 and 5
 - Akan continued working on connecting frontend to server holding pictures (also got
 a small start on "Tour Guide Mode")
- 
 
+3/13/19
+- Demo Day #3
+- project's improvements since last demo include: completing data for Building 2, adding
+some of the pictures to the backend server, getting a small start on Tour Guide Mode
+- team presented backend improvements in class
+ 
 */
