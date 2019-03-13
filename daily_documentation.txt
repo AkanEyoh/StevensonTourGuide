@@ -80,4 +80,23 @@ successfully
 - team met on site in Stevenson to look at a few confusing structures around building
 - worked on improving display of frontend
 
+2/25/19
+- Team Meeting w/ Prof Jules
+- possibly use Amazon S3 to store images, have frontend fetch it 
+- Picasso library by Square
+- parse out url with directions
+
+- start server with (nohup < cmd > &) to get it permanently running
+- potential: nohup <cmd> > /dev/null &
+- create EC2 instance 
+- try to find a script that automatically runs server
+
+3/11/19
+- team worked on getting pictures added to each individual instruction
+- Keaton worked on setting up a server within EC2 instance to store all pictures
+- Reid continued working on buildings 2 and 5
+- Akan continued working on connecting frontend to server holding pictures (also got
+a small start on "Tour Guide Mode")
+ 
+
 */
