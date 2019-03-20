@@ -240,6 +240,7 @@ hallway2_5_1 = locations.Hallway(id_name="hallway2-5-1")
 hallway2_5_2 = locations.Hallway(id_name="hallway2-5-2")
 hallway2_5_3 = locations.Hallway(id_name="hallway2-5-3")
 hallway2_5_4 = locations.Hallway(id_name="hallway2-5-4")
+hallway2_5_5 = locations.Hallway(id_name="hallway2-5-5")
 
 staircase2_5_1.adjList = [hallway2_5_2, staircase2_4_1, staircase2_3_1,
                           staircase2_2_1, staircase2_1_1]
@@ -272,9 +273,52 @@ hallway2_5_2.topviewRightList = ['2542', '2542A']
 hallway2_5_2.topviewBelowList = [staircase2_5_2, '2534B', '2534A', '2530', '2528', '2524',
                                  '2524A', '2524B', '2524C', '2522', '2520' '2518', '2516',
                                  '2514', hallway2_5_1, staircase2_5_1]
-hallway2_5_2.topviewOrderList = []
+hallway2_5_2.topviewOrderList = ["2501", '2501A', '2513', '2517', '2517A', '2517B', '2517C',
+                                 '2521', '2521A', '2521B', '2523', '2523B', '2527', '2527A',
+                                 '2527B', '2527C', hallway2_5_3, hallway2_5_4, '2535', '2537',
+                                 '2537C', '2537D', '2537E', '2537G', '2537F','2542', '2542A',
+                                 staircase2_5_2, '2534B', '2534A', '2530', '2528', '2524',
+                                 '2524A', '2524B', '2524C', '2522', '2520' '2518', '2516',
+                                 '2514', hallway2_5_1, staircase2_5_1]
 
 
+hallway2_5_3.roomList = ['2527', '2527A', '2527B', '2527C']
+hallway2_5_3.adjList = []
+hallway2_5_3.length = len(hallway2_5_1.roomList)
+hallway2_5_3.topviewLeftList = []
+hallway2_5_3.topviewAboveList = []
+hallway2_5_3.topviewRightList = []
+hallway2_5_3.topviewBelowList = []
+hallway2_5_3.topviewOrderList = []
+
+
+
+## Floor 6
+
+staircase2_6_1 = locations.Staircase(id_name="staircase2-6-1")
+staircase2_6_2 = locations.Staircase(id_name="staircase2-6-2")
+elevator2_6_1 = locations.Elevator(id_name="elevator2-6-1")
+hallway2_6_1 = locations.Hallway(id_name="hallway2-6-1")
+
+
+staircase2_6_1.adjList = [hallway2_6_1, staircase2_5_1, staircase2_4_1,
+        staircase2_3_1, staircase2_2_1, staircase2_1_1]
+
+staircase2_6_2.adjList = [] # TODO
+
+elevator2_6_1.adjList = [hallway2_6_1, elevator2_5_1, elevator2_4_1,
+        elevator2_3_1, elevator2_2_1, elevator2_1_1]
+
+hallway2_6_1.roomList = ['2603', '2605B', '2605A', '2605C',
+        '2600B', '2605', '2609', '2612']
+hallway2_6_1.adjList = [staircase2_6_1, staircase2_6_2, elevator2_6_1]
+hallway2_6_1.length = len(hallway2_6_1.roomList)
+hallway2_6_1.topviewLeftList = [staircase2_6_2, '2603']
+hallway2_6_1.topviewAboveList = ['2605B', '2605A', '2605C', '2600B']
+hallway2_6_1.topviewRightList = ['2605', '2609', '2612']
+hallway2_6_1.topviewBelowList = [elevator2_6_1, staircase2_6_1]
+hallway2_6_1.topviewOrderList = [staircase2_6_2, '2603','2605B', '2605A',
+        '2605C', '2600B', '2605', '2609', '2612', elevator2_6_1, staircase2_6_1 ]
 
 ####################### Building 2 stuff ends here
 
