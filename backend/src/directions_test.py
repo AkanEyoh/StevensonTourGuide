@@ -212,6 +212,63 @@ class TestBuilding4(unittest.TestCase):
         self.assertEqual(directions('4221', '4327'), exp('tkr Ts,4-2-1,l u1 wstr deststr'))
         self.assertEqual(directions('4219', '4327'), exp('wstr Ts,4-2-1,l u1 wstr deststr'))
 
+class TestBuilding5(unittest.TestCase):
+
+    def test_sameFloor(self):
+        # floor 1
+        self.assertEqual(directions('5116', '5119'), exp('tkr destr'))
+        self.assertEqual(directions('5115', '5114'), exp('tkr destl'))
+        self.assertEqual(directions('5117', '5134'), exp('tkl destr'))
+
+        # floor 2
+        self.assertEqual(directions('5234', '5216'), exp('wstr destl'))
+        self.assertEqual(directions('5233B', '5215'), exp('tkl destr'))
+        self.assertEqual(directions('5212', '5211'), exp('tkr destr'))
+        self.assertEqual(directions('5200B', '5215'), exp('wstr destl'))
+
+        # floor 3
+        self.assertEqual(directions('5322', '5321'), exp('wstr destr'))
+        self.assertEqual(directions('5317', '5326'), exp('tkr tkl destl'))
+        self.assertEqual(directions('5308', '5307'), exp('tkr destr'))
+        self.assertEqual(directions('5320', '5319'), exp('tkr destr'))
+
+        # floor 4
+        self.assertEqual(directions('5433', '5423'), exp('wstr destr'))
+        self.assertEqual(directions('5421', '5419'), exp('tkr destr'))
+        self.assertEqual(directions('5401', '5435'), exp('wstr deststr'))
+
+        # floor 5
+        self.assertEqual(directions('5523', '5521'), exp('tkr destr'))
+        self.assertEqual(directions('5519', '5517'), exp('tkr destr'))
+        self.assertEqual(directions('5522', '5502'), exp('tkl destl'))
+        self.assertEqual(directions('5503', '5501'), exp('tkr destr'))
+
+        # floor 6
+        self.assertEqual(directions('5624', '5622'), exp('tkl destl'))
+        self.assertEqual(directions('5623', '5621'), exp('tkr destr'))
+        self.assertEqual(directions('5619', '5617'), exp('tkr destr'))
+        self.assertEqual(directions('5607', '5605'), exp('tkr destr'))
+
+        # floor 7
+        self.assertEqual(directions('5724', '5721'), exp('tkl destr'))
+        self.assertEqual(directions('5722', '5719'), exp('tkl destr'))
+        self.assertEqual(directions('5707', '5705'), exp('tkr destr'))
+        self.assertEqual(directions('5703', '5712'), exp('wstr destr'))
+
+        # floor 8
+        self.assertEqual(directions('5822', '5821'), exp('tkl destr'))
+        self.assertEqual(directions('5819', '5817'), exp('tkr destr'))
+        self.assertEqual(directions('5814', '5812'), exp('tkl destl'))
+        self.assertEqual(directions('5805', '5803'), exp('tkr destr'))
+
+        # floor 9
+        self.assertEqual(directions('5924', '5922'), exp('tkl destl'))
+        self.assertEqual(directions('5923', '5921'), exp('tkr destr'))
+        self.assertEqual(directions('5919', '5917'), exp('tkr destr'))
+        self.assertEqual(directions('5901', '5902'), exp('tkl destr'))
+
+        # floor 10 is the roof, so no directions needed
+
 
 if __name__ == '__main__':
     unittest.main()
