@@ -269,6 +269,90 @@ class TestBuilding5(unittest.TestCase):
 
         # floor 10 is the roof, so no directions needed
 
+        def test_betweenFloorStairs(self):
+            switchToStairs()
+            self.assertEqual(directions('5115', '5215'), exp('tkr Ts,5-1-2,r u1 tkl destl'))
+            self.assertEqual(directions('5215', '5317'), exp('tkr Ts,5-2-2,r u1 tkl destl'))
+            self.assertEqual(directions('5421', '5320'), exp('tkl Ts,5-4-1,str l1 tkl tkr destr'))
+            self.assertEqual(directions('5605', '5320'), exp('tkl Ts,5-6-2,l l3 tkl destl'))
+            self.assertEqual(directions('5707', '5321'), exp('tkl Ts,5-7-2,l l4 tkl destl'))
+            self.assertEqual(directions('5822', '5121'), exp('tkr Ts,5-8-1,str l7 wstr destl'))
+
+        def test_betweenFloorElevator(self):
+            switchToElevator()
+            self.assertEqual(directions('5207', '5317'), exp('tkl Te,5-2,l e3 tkl destl'))
+            self.assertEqual(directions('5423', '5622'), exp('tkl tkl Te,5-2,l e6 tkr tkr destl'))
+            self.assertEqual(directions('5601', '5307'), exp('tkl Te,5-6,l e3 tkr destr'))
+            self.assertEqual(directions('5705', '5307'), exp('tkl Te,5-7,l e3 tkr destr'))
+            self.assertEqual(directions('5823', '5423'), exp('tkl tkl Te,5-8,l e4 tkr tkr destr'))
+            self.assertEqual(directions('5906', '5823'), exp('tkr Te,5-9,l e8 tkl destl'))
+
+
+class TestBuilding6(unittest.TestCase):
+
+    def test_sameFloor(self):
+        # floor 1
+        self.assertEqual(directions('6109', '6119'), exp('tkr destr'))
+        self.assertEqual(directions('6105', '6109'), exp('tkr destr'))
+        self.assertEqual(directions('6109', '6114'), exp('tkr destl'))
+
+        # floor 2
+        self.assertEqual(directions('6206', '6209'), exp('tkl destr'))
+        self.assertEqual(directions('6210', '6209'), exp('tkr destl'))
+
+        # floor 3
+        self.assertEqual(directions('6325', '6321'), exp('tkl destl'))
+        self.assertEqual(directions('6317', '6313'), exp('tkl destl'))
+        self.assertEqual(directions('6328', '6322'), exp('wstr destr'))
+        self.assertEqual(directions('6308', '6313'), exp('tkl destr'))
+
+        # floor 4
+        self.assertEqual(directions('6414', '6412'), exp('tkr destr'))
+        self.assertEqual(directions('6416', '6410'), exp('tkr destr'))
+        self.assertEqual(directions('6422', '6408'), exp('tkr destr'))
+
+        # floor 5
+        self.assertEqual(directions('6516', '6514'), exp('tkr destr'))
+        self.assertEqual(directions('6512', '6510'), exp('tkr destr'))
+        self.assertEqual(directions('6525', '6508'), exp('wstr destr'))
+        self.assertEqual(directions('6502', '6506'), exp('tkl destl'))
+
+        # floor 6
+        self.assertEqual(directions('6638', '6640'), exp('tkr destr'))
+        self.assertEqual(directions('6613', '6609'), exp('tkl destl'))
+        self.assertEqual(directions('6605', '6601'), exp('tkl destl'))
+        self.assertEqual(directions('6620', '6614'), exp('tkr destr'))
+
+        # floor 7
+        self.assertEqual(directions('6719', '6717'), exp('tkl destl'))
+        self.assertEqual(directions('6715', '6713'), exp('tkl destl'))
+        self.assertEqual(directions('6711', '6709'), exp('tkl destl'))
+        self.assertEqual(directions('6703', '6701'), exp('tkl destl'))
+
+        # floor 8
+        self.assertEqual(directions('6839', '6841'), exp('tkr destr'))
+        self.assertEqual(directions('6829', '6831'), exp('tkr destr'))
+        self.assertEqual(directions('6825', '6827'), exp('tkr destr'))
+        self.assertEqual(directions('6821', '6819'), exp('tkl destl'))
+
+        # floor 9
+        self.assertEqual(directions('6908', '6906'), exp('tkr destr'))
+        self.assertEqual(directions('6914', '6912'), exp('tkr destr'))
+        self.assertEqual(directions('6907G', '6907H'), exp('tkr destr'))
+        self.assertEqual(directions('6901', '6930'), exp('wstr tkr deststr'))
+
+        # floor 10
+        self.assertEqual(directions('61024', '61014'), exp('tkr destr'))
+        self.assertEqual(directions('61008', '61006'), exp('tkr tkr destr'))
+
+
+        def test_betweenFloorStairs(self):
+            switchToStairs()
+
+
+        def test_betweenFloorElevator(self):
+            switchToElevator()
+
 
 if __name__ == '__main__':
     unittest.main()
