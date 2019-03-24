@@ -320,6 +320,17 @@ hallway2_6_1.topviewBelowList = [elevator2_6_1, staircase2_6_1]
 hallway2_6_1.topviewOrderList = [staircase2_6_2, '2603','2605B', '2605A',
         '2605C', '2600B', '2605', '2609', '2612', elevator2_6_1, staircase2_6_1 ]
 
+## Floor 7
+
+staircase2_7_1 = locations.Staircase(id_name="staircase2-7-1")
+elevator2_7_1 = locations.Elevator(id_name="elevator2-7-1")
+hallway2_7_1 = locations.Hallway(id_name="hallway2-7-1")
+hallway2_7_2 = locations.Hallway(id_name="hallway2-7-2")
+
+staircase2_7_1.adjList = [hallway2_7_2]
+
+
+
 ####################### Building 2 stuff ends here
 
 staircase1_2.adjList = [hallway1_2]
