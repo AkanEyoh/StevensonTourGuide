@@ -1,10 +1,12 @@
-## Author(s): Akaninyene Eyoh, Ulysses Yu, Daniel Yan
+## Author(s): Akaninyene Eyoh, Ulysses Yu, Daniel Yan, Keaton Ufheil
 ## Date: 2018-11-06
 ## Email: akaninyene.e.eyoh@vanderbilt.edu, ulysses.l.yu@vanderbilt.edu,
 # daniel.yan@vanderbilt.edu
 ## Filename: locations.py
 ## Description: Implements node structure of Stevenson hallways, stairs,
 # and elevators.
+
+import re
 
 # Constants
 DEFAULT_STAIRCASE_LENGTH = 1
@@ -21,10 +23,10 @@ NUMBER_TO_BUILDING = {
 # defines a parent class for location
 # this stores an adjacency list and provides a mechanism for accessing them
 class Location:
-    def __init__(self, adjList=[], id_name=DEFAULT_ID, url_base=0):
+    def __init__(self, adjList=[], id_name=DEFAULT_ID):
         self.adjList = adjList
         self.id_name = id_name
-        self.url_base = url_base
+        self.url_base = re.search('[0-9-]+$', self.id_name).group(0)
 
     # adds the adjacency list to the locations
     def set_adj_list(self, adjList):
@@ -40,8 +42,8 @@ class Location:
 # defines a hallway class that extends Location
 # this stores an adjacency list, room list, and the length of the hallway
 class Hallway(Location):
-    def __init__(self, adjList=[], roomList=[], topviewAboveList=[], topviewBelowList=[], topviewLeftList=[], topviewRightList=[], topviewOrderList=[], length=DEFAULT_HALLWAY_LENGTH, id_name=DEFAULT_ID,url_base=0):
-        super().__init__(adjList=adjList, id_name=id_name, url_base=url_base)
+    def __init__(self, adjList=[], roomList=[], topviewAboveList=[], topviewBelowList=[], topviewLeftList=[], topviewRightList=[], topviewOrderList=[], length=DEFAULT_HALLWAY_LENGTH, id_name=DEFAULT_ID):
+        super().__init__(adjList=adjList, id_name=id_name)
         self.length = length
         self.roomList = roomList
         self.topviewAboveList = topviewAboveList
@@ -76,8 +78,8 @@ class Hallway(Location):
 # default length set to 1.1 so that stairs are preferred
 class Elevator(Location):
     length = DEFAULT_ELEVATOR_LENGTH
-    def __init__(self, adjList=[], id_name=DEFAULT_ID, url_base=''):
-        super().__init__(adjList=adjList, id_name=id_name, url_base=url_base)
+    def __init__(self, adjList=[], id_name=DEFAULT_ID):
+        super().__init__(adjList=adjList, id_name=id_name)
 
     def get_floor(self):
         return self.floor
