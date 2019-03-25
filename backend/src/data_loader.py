@@ -343,6 +343,40 @@ hallway2_7_2 = locations.Hallway(id_name="hallway2-7-2")
 
 staircase2_7_1.adjList = [hallway2_7_2]
 
+elevator2_7_1.adjList = [hallway2_7_2, elevator2_6_1, elevator2_5_1, elevator2_4_1,
+        elevator2_3_1, elevator2_2_1, elevator2_1_1]
+
+hallway2_7_1.roomList = ['2700A', '2700', '2705']
+hallway2_7_1.adjList = [hallway2_7_2, elevator2_7_1]
+hallway2_7_1.length = len(hallway2_7_1.adjList)
+hallway2_7_1.topviewLeftList = []
+hallway2_7_1.topviewAboveList = ['2700']
+hallway2_7_1.topviewRightList = ['2705']
+hallway2_7_1.topviewBelowList = [elevator2_7_1, '2700A']
+hallway2_7_1.topviewOrderList = [hallway2_7_2, '2700', '2705', '2700A', elevator2_7_1]
+
+hallway2_7_2.roomList = ['2700', '2701', '2703', '2700', '2700A', '2707', '2704', '2708', '2712',
+        '2716', '2720', '2724', '2726', '2740', '2721', '2719', '2715', '2713', '2700C']
+hallway2_7_2.adjList = [staircase2_7_1, hallway2_7_1]
+hallway2_7_2.length = len(hallway2_7_2.adjList)
+hallway2_7_2.topviewLeftList = ['2700']
+hallway2_7_2.topviewAboveList = ['2704', '2708', '2712', '2716', '2720', '2724', '2726']
+hallway2_7_2.topviewRightList = []
+hallway2_7_2.topviewBelowList = ['2721', '2719', '2715', '2713', '2707', '2700A', '2703', '2701']
+hallway2_7_2.topviewOrderList = ['2700', '2704', '2708', '2712', '2716', '2720', '2724', '2726',
+        '2740', staircase2_7_1, '2721', '2719', '2715', '2713', '2700C', '2707', '2700A', '2703', '2701']
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ####################### Building 2 stuff ends here
