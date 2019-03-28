@@ -10,7 +10,7 @@ VUIT department, Plant Operations, Construction operations
 1/16/19
 - Walked around most Stevenson buildings to get team acquainted with the 
 structure of the 7 buildings
-- Talked to Stevenson’s map librarian to see if we could get floor plans 
+- Talked to Stevensonâ€™s map librarian to see if we could get floor plans 
 of building
 - Map librarian directed team to Plant Operations building to talk to 
 workers there for floor plans
@@ -103,5 +103,10 @@ a small start on "Tour Guide Mode")
 - project's improvements since last demo include: completing data for Building 2, adding
 some of the pictures to the backend server, getting a small start on Tour Guide Mode
 - team presented backend improvements in class
+
+3/27/19
+- Reid finished data collection for building 2 and started on building 3
+- Akan redesigned UI of the frontend of the Android App
+- Keaton worked on using Picasso to dynamically add images to the Android app UI
  
 */
