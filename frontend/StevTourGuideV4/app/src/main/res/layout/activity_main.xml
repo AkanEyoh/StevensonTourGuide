@@ -11,7 +11,7 @@
         android:id="@+id/welcome"
         android:layout_width="377dp"
         android:layout_height="219dp"
-        android:fontFamily="@font/OswaldRegular"
+        android:fontFamily="@font/oswaldregular"
         android:gravity="center"
         android:text="Stevenson \nTour Guide"
         android:textColor="@android:color/white"
@@ -27,9 +27,12 @@
         android:id="@+id/button"
         android:layout_width="294dp"
         android:layout_height="95dp"
+        android:layout_marginTop="545dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginRight="59dp"
         android:text="TAP HERE TO ENTER"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="545dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
