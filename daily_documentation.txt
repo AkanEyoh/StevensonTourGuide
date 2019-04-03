@@ -1,4 +1,4 @@
-// Daily Accomplishments
+﻿// Daily Accomplishments
 
 /*
 1/14/19
@@ -108,5 +108,12 @@ some of the pictures to the backend server, getting a small start on Tour Guide 
 - Reid finished data collection for building 2 and started on building 3
 - Akan redesigned UI of the frontend of the Android App
 - Keaton worked on using Picasso to dynamically add images to the Android app UI
+
+4/1/19
+- Demo Day #4
+- team ran into merge conflicts so we weren't able to demo the combination of instructions
+and pictures in the Android app
+- instead we took screenshots of tour guide mode and displayed/explained them for
+presentation
  
 */
