@@ -42,7 +42,7 @@ class Location:
 # defines a hallway class that extends Location
 # this stores an adjacency list, room list, and the length of the hallway
 class Hallway(Location):
-    def __init__(self, adjList=[], roomList=[], topviewAboveList=[], topviewBelowList=[], topviewLeftList=[], topviewRightList=[], topviewOrderList=[], length=DEFAULT_HALLWAY_LENGTH, id_name=DEFAULT_ID):
+    def __init__(self, adjList=[], roomList=[], topviewAboveList=[], topviewBelowList=[], topviewLeftList=[], topviewRightList=[], topviewOrderList=[], length=DEFAULT_HALLWAY_LENGTH, id_name=DEFAULT_ID, url_base=''):
         super().__init__(adjList=adjList, id_name=id_name)
         self.length = length
         self.roomList = roomList
@@ -78,7 +78,7 @@ class Hallway(Location):
 # default length set to 1.1 so that stairs are preferred
 class Elevator(Location):
     length = DEFAULT_ELEVATOR_LENGTH
-    def __init__(self, adjList=[], id_name=DEFAULT_ID):
+    def __init__(self, adjList=[], id_name=DEFAULT_ID, url_base=''):
         super().__init__(adjList=adjList, id_name=id_name)
 
     def get_floor(self):
@@ -94,7 +94,7 @@ class Elevator(Location):
 class Staircase(Location):
     length = DEFAULT_STAIRCASE_LENGTH
     def __init__(self, adjList=[], id_name=DEFAULT_ID, url_base=''):
-        super().__init__(adjList=adjList, id_name=id_name, url_base=url_base)
+        super().__init__(adjList=adjList, id_name=id_name)
 
     def get_floor(self):
         return self.floor

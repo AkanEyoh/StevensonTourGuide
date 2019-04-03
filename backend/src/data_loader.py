@@ -71,11 +71,11 @@ elevator1_1.floor = 1
 hallway1_1_2.roomList = ["1103", "1107", "1109", "1110", "1110A", "1110B",
                        "1110C", "1130"]
 # New stuff starts here
-hallway1_2.adjList = [staircase1_2, elevator1, hallway1_1]
-hallway1_2.length = len(hallway1_2.adjList)
+hallway1_2.adjList = [staircase1_1_2, elevator1_1, hallway1_1_1]
+hallway1_2.length = len(hallway1_1_2.adjList)
 hallway1_2.topviewAboveList = ["1130", "1110C", "1110B", "1110A", "1110"]
 hallway1_2.topviewBelowList = ["1109", "1107", "1103"]
-hallway1_2.topviewLeftList = [hallway1_1]
+hallway1_2.topviewLeftList = [hallway1_1_1]
 hallway1_2.topviewRightList = []
 hallway1_2.topviewOrderList = ["1130", "1110C", "1109", "1107", "1110B", "1110A", "1110", "1103"]
 # New stuff ends here
