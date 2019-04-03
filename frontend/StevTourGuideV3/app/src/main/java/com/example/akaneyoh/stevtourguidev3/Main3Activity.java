@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.os.Handler;
 
@@ -20,30 +21,23 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Main3Activity extends AppCompatActivity {
+import com.squareup.picasso.*;
 
-    private TextView fullPrintStatement;
-    private String printedPath = "";
+public class Main3Activity extends AppCompatActivity {
+    private final int[] textIds = {R.id.t1, R.id.t2, R.id.t3, R.id.t4};
+    private final int[] imageIds = {R.id.i1, R.id.i2, R.id.i3, R.id.i4};
+    private final String imageServerUrlBase = "http://10.66.79.151:7777/";
+
     private RequestQueue mQueue;
-    private String errorMessage = "Sorry, one of those rooms does not exist. " +
-            "Please enter a valid room number.";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
 
-        fullPrintStatement = findViewById(R.id.printStatement);
-        Button showPathButton = findViewById(R.id.pathButton);
-
         mQueue = Volley.newRequestQueue(this);
 
-        showPathButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                jsonParse();
-            }
-        });
+        jsonParse();
     }
 
     private void jsonParse() {
@@ -52,32 +46,22 @@ public class Main3Activity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            JSONArray jsonArray = response.getJSONArray("return_list");
-                            if (jsonArray.getString(0).equals("False")) {
-                                printedPath = "Sorry, either one or both of those rooms do not exist within Stevenson. " +
-                                        "Please enter valid room numbers and try again.";
-                                fullPrintStatement.append(printedPath);
-                                new Handler().postDelayed(new Runnable() {
+                            String[] directions = jsonArrToArray(response.getJSONArray("directions"));
+                            String[] urls = jsonArrToArray(response.getJSONArray("urls"));
+                            if (directions == null) {
+                                // TODO add error msg if this fails
+
+                                // TODO re-add below
+                                /*new Handler().postDelayed(new Runnable() {
                                     @Override
                                     public void run() {
                                         Intent i = new Intent(Main3Activity.this, Main2Activity.class);
                                         startActivity(i);
                                         finish();
                                     }
-                                }, 5000);
+                                }, 5000);*/
                             } else {
-                                for (int i = 0; i < jsonArray.length(); i++) {
-                                    if (jsonArray.getString(i) != "null") {
-                                        printedPath = printedPath + "\n" + jsonArray.getString(i));
-                                    }
-                                }
-                                String intro = "You are currently located at Room " + Main2Activity.startRoom + ". "
-                                        + "Use the following instructions to reach Room " + Main2Activity.endRoom + ".\n";
-                                fullPrintStatement.append(intro);
-                                fullPrintStatement.append(printedPath);
-                                String closing = "\n\nCongratulations, you made it to Room " + Main2Activity.endRoom + "!"
-                                        + "\nThank you for using Stevenson Tour Guide. :)";
-                                fullPrintStatement.append(closing);
+                                loadDirections(directions, urls);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -90,5 +74,47 @@ public class Main3Activity extends AppCompatActivity {
             }
         });
         mQueue.add(request);
+    }
+
+    private String[] jsonArrToArray(JSONArray arr) {
+        if (arr == null || arr.length() == 0)
+            return null;
+
+        String[] converted = new String[arr.length()];
+
+        for (int i=0; i < converted.length; i++) {
+            try {
+                converted[i] = arr.getString(i);
+            } catch (JSONException e) {
+                // this really shouldn't happen...
+                return null;
+            }
+        }
+        return converted;
+    }
+
+    public void loadDirections(String[] directionText, String[] imageUrls) {
+        int numDirections = directionText.length;
+        for (int i=0; i < numDirections; i++) {
+            addDirection(textIds[i], imageIds[i], directionText[i], imageUrls[i]);
+        }
+    }
+
+    public void addDirection(int textId, int imageId, String text, String url) {
+        // first change the text item
+        TextView targetText = (TextView) findViewById(textId);
+        targetText.setText(text);
+        targetText.setVisibility(View.VISIBLE);
+
+        // now change the image
+        ImageView targetImage = (ImageView) findViewById(imageId);
+        Picasso
+                .get()
+                .load(imageServerUrlBase + url)
+                .error(R.drawable.camel)
+                .resize(1000, 1000)
+                .rotate(90)
+                .into(targetImage);
+        targetImage.setVisibility(View.VISIBLE);
     }
 }

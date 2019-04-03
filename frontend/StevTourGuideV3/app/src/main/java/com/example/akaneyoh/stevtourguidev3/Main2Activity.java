@@ -10,6 +10,7 @@ import android.widget.EditText;
 
 public class Main2Activity extends AppCompatActivity {
 
+    private static final String urlBase = "10.66.79.151:8000";
     public static String urlPath;
     public static String startRoom;
     public static String endRoom;
@@ -34,7 +35,7 @@ public class Main2Activity extends AppCompatActivity {
                 startRoom = startRoomInput.getText().toString();
                 endRoom = endRoomInput.getText().toString();
 
-                urlPath = "http://18.212.189.150:5000/routeFinder/" + startRoom + "/" + endRoom;
+                urlPath = "http://" + urlBase + "/routeFinder/" + startRoom + "/" + endRoom;
                 openActivity3(v);
             }
         });
