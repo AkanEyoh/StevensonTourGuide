@@ -112,8 +112,8 @@ public class Main3Activity extends AppCompatActivity {
                 .get()
                 .load(imageServerUrlBase + url)
                 .error(R.drawable.camel)
-                .resize(1000, 1000)
                 .rotate(90)
+                .resize(1200, 0)
                 .into(targetImage);
         targetImage.setVisibility(View.VISIBLE);
     }
