@@ -15,7 +15,7 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Here are your directions"
+            android:text="@string/directions_title"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
@@ -74,7 +74,6 @@
             android:id="@+id/t4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="z"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/black"
             android:visibility="gone"/>

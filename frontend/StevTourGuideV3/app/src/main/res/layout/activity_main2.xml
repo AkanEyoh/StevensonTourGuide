@@ -14,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="112dp"
         android:ems="10"
-        android:hint="Start Room (####)"
+        android:hint="@string/start_room_hint"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="83dp"
         tools:layout_editor_absoluteY="102dp" />
@@ -30,7 +30,7 @@
         android:layout_marginLeft="78dp"
         android:layout_marginTop="218dp"
         android:ems="10"
-        android:hint="End Room (####)"
+        android:hint="@string/end_room_hint"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="84dp"
         tools:layout_editor_absoluteY="198dp" />
@@ -42,7 +42,7 @@
         android:layout_alignStart="@+id/startRoomInput"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="115dp"
-        android:text="Find My Room"
+        android:text="@string/find_room_button"
         android:textSize="20sp"
         tools:layout_editor_absoluteX="87dp"
         tools:layout_editor_absoluteY="307dp" />
