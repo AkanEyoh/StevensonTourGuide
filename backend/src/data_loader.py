@@ -348,7 +348,7 @@ elevator2_7_1.adjList = [hallway2_7_2, elevator2_6_1, elevator2_5_1, elevator2_4
 
 hallway2_7_1.roomList = ['2700A', '2700', '2705']
 hallway2_7_1.adjList = [hallway2_7_2, elevator2_7_1]
-hallway2_7_1.length = len(hallway2_7_1.adjList)
+hallway2_7_1.length = len(hallway2_7_1.roomList)
 hallway2_7_1.topviewLeftList = []
 hallway2_7_1.topviewAboveList = ['2700']
 hallway2_7_1.topviewRightList = ['2705']
@@ -358,7 +358,7 @@ hallway2_7_1.topviewOrderList = [hallway2_7_2, '2700', '2705', '2700A', elevator
 hallway2_7_2.roomList = ['2700', '2701', '2703', '2700', '2700A', '2707', '2704', '2708', '2712',
         '2716', '2720', '2724', '2726', '2740', '2721', '2719', '2715', '2713', '2700C']
 hallway2_7_2.adjList = [staircase2_7_1, hallway2_7_1]
-hallway2_7_2.length = len(hallway2_7_2.adjList)
+hallway2_7_2.length = len(hallway2_7_2.roomList)
 hallway2_7_2.topviewLeftList = ['2700']
 hallway2_7_2.topviewAboveList = ['2704', '2708', '2712', '2716', '2720', '2724', '2726']
 hallway2_7_2.topviewRightList = []
@@ -378,8 +378,30 @@ hallway2_7_2.topviewOrderList = ['2700', '2704', '2708', '2712', '2716', '2720',
 
 
 
-
 ####################### Building 2 stuff ends here
+######################## Reid Building 3
+
+hallway3_2_1 = locations.Hallway(id_name="hallway3-2-1")
+hallway3_2_2 = locations.Hallway(id_name="hallway3-2-2")
+hallway3_2_3 = locations.Hallway(id_name="hallway3-2-3")
+elevator3_2_1 = locations.Elevator(id_name="elevator3-2-1")
+
+hallway3_2_1.roomList = ["3200E1", "3200E2", "3210", "3200", "3212", "3214", "3216A", "3216", "3218",
+        "3214A", "3226B", "3222C", "3222", "3222B", "3222A", "3231", "3231B", "3205B", "3205",
+        "3211", "3213", "3215", "3238", "3238A", "3205A"]
+hallway3_2_1.adjList = [elevator3_2_1, ] # TODO
+hallway3_2_1.length = len(hallway3_2_1.roomList)
+hallway3_2_1.topviewLeftList = ["3222", "3222A", "3222B", "3226B", "3222C", "3226A", "3218", "3216",
+        "3216A", "3214", "3212", "3210", elevator3_2_1]
+hallway3_2_1.topviewAboveList = ["3200"]
+hallway3_2_1.topviewRightList = ["3205B", "3205", "3211", "3213", "3215", "3238", "3238A", "3205A", "3231B"]
+hallway3_2_1.topviewBelowList = ["3231"]
+hallway3_2_1.topviewOrderList = ["3222", "3222A", "3222B", "3222C", "3226A", "3226B", "3218", "3216",
+        "3216A", "3212", "3210", elevator3_2_1, "3200", "3205B", "3205", "3205A", "3238A", "3238"
+        "3215", "3213", "3211"]
+
+
+######################## End building 3
 hallway1_1_2.adjList = [staircase1_1_2, elevator1_1, hallway1_1_1]
 hallway1_1_2.length = 8
 hallway1_1_2.topviewAboveList = [staircase1_1_2, "1110C", "1110B", "1110A", "1110"]
