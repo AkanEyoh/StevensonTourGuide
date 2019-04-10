@@ -26,7 +26,8 @@ import com.squareup.picasso.*;
 public class Main3Activity extends AppCompatActivity {
     private final int[] textIds = {R.id.t1, R.id.t2, R.id.t3, R.id.t4};
     private final int[] imageIds = {R.id.i1, R.id.i2, R.id.i3, R.id.i4};
-    private final String imageServerUrlBase = "http://10.66.79.151:7777/";
+    private final String imageServerPort = "7777";
+    private final String imageServerUrlBase = "http://" + Main2Activity.urlBase + ":" + imageServerPort + "/";
 
     private RequestQueue mQueue;
 

@@ -10,7 +10,8 @@ import android.widget.EditText;
 
 public class Main2Activity extends AppCompatActivity {
 
-    private static final String urlBase = "10.66.79.151:8000";
+    public static final String urlBase = "10.66.140.12";
+    private static final String directionsPort = "8000";
     public static String urlPath;
     public static String startRoom;
     public static String endRoom;
@@ -35,7 +36,7 @@ public class Main2Activity extends AppCompatActivity {
                 startRoom = startRoomInput.getText().toString();
                 endRoom = endRoomInput.getText().toString();
 
-                urlPath = "http://" + urlBase + "/routeFinder/" + startRoom + "/" + endRoom;
+                urlPath = "http://" + urlBase + ":" + directionsPort + "/routeFinder/" + startRoom + "/" + endRoom;
                 openActivity3(v);
             }
         });
