@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">StevTourGuideV5</string>
+    <string name="stevenson_ntour_guide">Stevenson\nTour Guide</string>
+    <string name="tap_here_to_enter">TAP HERE TO ENTER</string>
+    <string name="todo1">TODO</string>
+    <string name="greetings_and_welcome_to_stevenson_tour_guide">Greetings!\nAnd welcome to Stevenson Tour Guide!</string>
+    <string name="my_name_is_eldon_stevenson_jr_and_ill_be_your_tour_guide_today">My name is Eldon Stevenson Jr. and I\'ll be your tour guide today!</string>
+    <string name="i_realize">I realize my building can be very difficult to navigate, but don\'t fret!\nI\'m here to help!</string>
+    <string name="how_can">How can I help you today?</string>
+    <string name="todo3">TODO</string>
+    <string name="next">NEXT</string>
+    <string name="back">BACK</string>
+    <string name="find_a_room">Find A Room</string>
+    <string name="tour_guide_mode">Tour Guide Mode</string>
+    <string name="lecture_hall_nentrance">LECTURE HALL\nENTRANCE</string>
+    <string name="tour_guide_mode_allows">Tour Guide Mode allows you to take a tour of all of Stevenson\'s buildings.</string>
+    <string name="select_a">Select a starting location.</string>
+    <string name="todo4">TODO</string>
+    <string name="outside_lec_hall">You\'re outside the lecture halls? Great! Let\'s get started!\nProceed through the doors ahead.</string>
+    <string name="todo5">TODO</string>
+    <string name="todo6">TODO</string>
+    <string name="you_have">You have now entered Building 4 (the Lecture Halls).</string>
+</resources>
