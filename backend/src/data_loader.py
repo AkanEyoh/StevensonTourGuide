@@ -25,7 +25,7 @@ import locations
 #########################
 ## Building 1 (MATH) Locations##
 #########################
-## Floor 1 Locations 
+## Floor 1 Locations
 staircase1_1_1 = locations.Staircase(id_name="staircase1-1-1", url_base='1_1_1')
 
 hallway1_1_1 = locations.Hallway(id_name="hallway1-1-1", url_base='1_1_1')
@@ -68,9 +68,10 @@ hallway1_1_1.topviewOrderList = ["1122", "1120", "1117", staircase1_1_1, "1118",
 elevator1_1.adjList = [hallway1_1_1, hallway1_1_2, elevator1_2]
 elevator1_1.floor = 1
 
-hallway1_1_2.roomList = ["1103", "1107", "1109", "1110", "1110A", "1110B",
-                       "1110C", "1130"]
 # New stuff starts here
+
+#####ISUES
+'''
 hallway1_2.adjList = [staircase1_2, elevator1, hallway1_1]
 hallway1_2.length = len(hallway1_2.adjList)
 hallway1_2.topviewAboveList = ["1130", "1110C", "1110B", "1110A", "1110"]
@@ -78,6 +79,52 @@ hallway1_2.topviewBelowList = ["1109", "1107", "1103"]
 hallway1_2.topviewLeftList = [hallway1_1]
 hallway1_2.topviewRightList = []
 hallway1_2.topviewOrderList = ["1130", "1110C", "1109", "1107", "1110B", "1110A", "1110", "1103"]
+'''
+######END ISSUES
+
+hallway1_1_2.roomList = ["1103", "1107", "1109", "1110", "1110A", "1110B",
+                       "1110C", "1130"]
+hallway1_1_2.adjList = [staircase1_1_2, elevator1_1, hallway1_1_1]
+hallway1_1_2.length = 8
+hallway1_1_2.topviewAboveList = [staircase1_1_2, "1110C", "1110B", "1110A", "1110"]
+hallway1_1_2.topviewBelowList = [elevator1_1, "1109", "1107", "1103"]
+hallway1_1_2.topviewLeftList = [hallway1_1_1]
+hallway1_1_2.topviewRightList = []
+hallway1_1_2.topviewOrderList = [staircase1_1_2, elevator1_1, "1110C", "1109", "1107", "1110B", "1110A", "1110", "1103", staircase1_1_2]
+
+staircase1_1_2.adjList = [hallway1_1_2, staircase1_2_2]
+staircase1_1_2.floor = 1
+
+
+## Floor 2 locations
+
+staircase1_2_1.adjList = [hallway1_2_1, staircase1_1_1]
+staircase1_2_1.floor = 2
+
+hallway1_2_1.roomList = ["1232", "1224", "1222", "1220", "1225", "1218"]
+hallway1_2_1.adjList = [staircase1_2_1, elevator1_2, hallway1_2_2]
+hallway1_2_1.length = 6
+hallway1_2_1.topviewAboveList = ["1232", staircase1_2_1, "1224", "1222", "1220", "1218"]
+hallway1_2_1.topviewBelowList = ["1225", elevator1_2]
+hallway1_2_1.topviewLeftList = []
+hallway1_2_1.topviewRightList = [hallway1_2_2]
+hallway1_2_1.topviewOrderList = ["1232", staircase1_2_1, "1224", "1222", "1225", "1220", elevator1_2, "1218"]
+
+elevator1_2.adjList = [hallway1_2_1, elevator1_1]
+elevator1_2.floor = 2
+
+hallway1_2_2.roomList = ["1219", "1214", "1210", "1206"]
+hallway1_2_2.adjList = [staircase1_2_2, elevator1_2, hallway1_2_1]
+hallway1_2_2.length = 7
+hallway1_2_2.topviewAboveList = ["1214", "1210", "1206", staircase1_2_2]
+hallway1_2_2.topviewBelowList = [elevator1_2, "1219"]
+hallway1_2_2.topviewLeftList = [hallway1_2_1]
+hallway1_2_2.topviewRightList = []
+hallway1_2_2.topviewOrderList = [elevator1_2, "1219", "1214", "1210", "1206", staircase1_2_2]
+
+staircase1_2_2.adjList = [hallway1_2_2, staircase1_1_2]
+staircase1_2_2.floor = 2
+
 # New stuff ends here
 
 ##################### Building 2 stuff starts here
@@ -440,78 +487,15 @@ hallway4_3_1.topviewBelowList = ["300"]
 hallway4_3_1.topviewOrderList = ["327", "309", staircase4_3_1, "300"]
 
 
-
-
-
-
-
-
-
 ######################## End Building 4
 
 
 
-hallway1_1_2.adjList = [staircase1_1_2, elevator1_1, hallway1_1_1]
-hallway1_1_2.length = 8
-hallway1_1_2.topviewAboveList = [staircase1_1_2, "1110C", "1110B", "1110A", "1110"]
-hallway1_1_2.topviewBelowList = [elevator1_1, "1109", "1107", "1103"]
-hallway1_1_2.topviewLeftList = [hallway1_1_1]
-hallway1_1_2.topviewRightList = []
-hallway1_1_2.topviewOrderList = [staircase1_1_2, elevator1_1, "1110C", "1109", "1107", "1110B", "1110A", "1110", "1103", staircase1_1_2]
-
-staircase1_1_2.adjList = [hallway1_1_2, staircase1_2_2]
-staircase1_1_2.floor = 1
-
-## Floor 2 locations
-
-staircase1_2_1.adjList = [hallway1_2_1, staircase1_1_1]
-staircase1_2_1.floor = 2
-
-hallway1_2_1.roomList = ["1232", "1224", "1222", "1220", "1225", "1218"]
-hallway1_2_1.adjList = [staircase1_2_1, elevator1_2, hallway1_2_2]
-hallway1_2_1.length = 6
-hallway1_2_1.topviewAboveList = ["1232", staircase1_2_1, "1224", "1222", "1220", "1218"]
-hallway1_2_1.topviewBelowList = ["1225", elevator1_2]
-hallway1_2_1.topviewLeftList = []
-hallway1_2_1.topviewRightList = [hallway1_2_2]
-hallway1_2_1.topviewOrderList = ["1232", staircase1_2_1, "1224", "1222", "1225", "1220", elevator1_2, "1218"]
-
-elevator1_2.adjList = [hallway1_2_1, elevator1_1]
-elevator1_2.floor = 2
-
-hallway1_2_2.roomList = ["1219", "1214", "1210", "1206"]
-hallway1_2_2.adjList = [staircase1_2_2, elevator1_2, hallway1_2_1]
-hallway1_2_2.length = 7
-hallway1_2_2.topviewAboveList = ["1214", "1210", "1206", staircase1_2_2]
-hallway1_2_2.topviewBelowList = [elevator1_2, "1219"]
-hallway1_2_2.topviewLeftList = [hallway1_2_1]
-hallway1_2_2.topviewRightList = []
-hallway1_2_2.topviewOrderList = [elevator1_2, "1219", "1214", "1210", "1206", staircase1_2_2]
-
-staircase1_2_2.adjList = [hallway1_2_2, staircase1_1_2]
-staircase1_2_2.floor = 2
-
 
 stevenson_math = [staircase1_1_1, staircase1_1_2, elevator1_1, hallway1_1_1, hallway1_1_2, staircase1_2_1, staircase1_2_2, elevator1_2, hallway1_2_1, hallway1_2_2]
 
-#########################
-## Building 2 (MOLEC. BIO) Locations##
-#########################
-## Floor 1 Locations
-staircase2_1_1 = locations.Staircase(id_name="staircase2-1-1", url_base='2_1_1')
-
-hallway2_1_1 = locations.Hallway(id_name="hallway2-1-1", url_base='2_1_1')
-
-hallway2_1_2 = locations.Hallway(id_name="hallway2-1-2", url_base='2_1_2')
-
-hallway2_1_3 = locations.Hallway(id_name="hallway2-1-3", url_base='2_1_3')
-
-hallway2_1_4 = locations.Hallway(id_name="hallway2-1-4", url_base='2_1_4')
-
-
-staircase1_2.adjList = [hallway1_2]
-
-stevenson_math = [staircase1_1, staircase1_2, elevator1, hallway1_1, hallway1_2]
+# LOOKS LIKE OLD CODE BELOW
+# stevenson_math = [staircase1_1, staircase1_2, elevator1, hallway1_1, hallway1_2]
 
 graph = stevenson_math
 
