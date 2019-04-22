@@ -16,8 +16,21 @@
     <string name="tour_guide_mode_allows">Tour Guide Mode allows you to take a tour of all of Stevenson\'s buildings.</string>
     <string name="select_a">Select a starting location.</string>
     <string name="todo4">TODO</string>
-    <string name="outside_lec_hall">You\'re outside the lecture halls? Great! Let\'s get started!\nProceed through the doors ahead.</string>
+    <string name="outside_lec_hall">You\'re outside the lecture halls?\nGreat! Let\'s get started!\nProceed through the doors ahead.</string>
     <string name="todo5">TODO</string>
     <string name="todo6">TODO</string>
-    <string name="you_have">You have now entered Building 4 (the Lecture Halls).</string>
+    <string name="you_have">You have now entered Building 4\n(the Lecture Halls).</string>
+    <string name="left_4309">To your left is Room 4309.</string>
+    <string name="right_4327">To your right is Room 4327.</string>
+    <string name="if_you_are">If you\'re in a lab science like\nChemistry, Geology, Physics, etc.\nyour class will probably be in\none of these 2 rooms.</string>
+    <string name="lets_head">Let\'s head down this staircase\nto your left.</string>
+    <string name="still_4309">In front of you is still Room 4309,\none of the rooms we saw upstairs.</string>
+    <string name="so_big">The lecture halls are so large\nthat they take up 2 floors.</string>
+    <string name="right_of_4309">To the right of that is\nthe lower level of Room 4327.</string>
+    <string name="pass_staircase">If you walk pass the staircase,\nyou\'ll eventually enter\nBuilding 1 (the Math Building).</string>
+    <string name="for_now_though">For now though, let\'s this way,\ntoward the AED sign.</string>
+    <string name="left_to_library">If you walk down this hallway,\nyou\'ll eventually enter\nBuilding 3 (the Library).</string>
+    <string name="start_room">Start Room</string>
+    <string name="start_room">Start Room</string>
+    <string name="end_room">End Room</string>
 </resources>

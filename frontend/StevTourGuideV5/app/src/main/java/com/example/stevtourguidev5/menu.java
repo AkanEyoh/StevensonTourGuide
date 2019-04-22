@@ -55,7 +55,9 @@ public class menu extends AppCompatActivity {
         backImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (state == 1) {
+                if (state == 0) {
+                  openSplashScreen(v);
+                } else if (state == 1) {
                   greet1.setVisibility(View.VISIBLE);
                   greet2.setVisibility(View.INVISIBLE);
                   state = 0;
@@ -93,4 +95,8 @@ public class menu extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openSplashScreen (View view) {
+        Intent intent = new Intent(menu.this, MainActivity.class);
+        startActivity(intent);
+    }
 }

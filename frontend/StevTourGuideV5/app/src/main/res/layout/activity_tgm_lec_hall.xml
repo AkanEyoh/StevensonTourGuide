@@ -9,6 +9,156 @@
     tools:context=".tgmLecHall">
 
     <TextView
+        android:id="@+id/lecHallMsg12"
+        android:layout_width="401dp"
+        android:layout_height="127dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="340dp"
+        android:gravity="center"
+        android:text="@string/left_to_library"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lecHallMsg11"
+        android:layout_width="401dp"
+        android:layout_height="127dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="340dp"
+        android:gravity="center"
+        android:text="@string/for_now_though"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lecHallMsg10"
+        android:layout_width="401dp"
+        android:layout_height="127dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="340dp"
+        android:gravity="center"
+        android:text="@string/pass_staircase"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lecHallMsg9"
+        android:layout_width="401dp"
+        android:layout_height="127dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="340dp"
+        android:gravity="center"
+        android:text="@string/right_of_4309"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lecHallMsg8"
+        android:layout_width="401dp"
+        android:layout_height="127dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="340dp"
+        android:gravity="center"
+        android:text="@string/so_big"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lecHallMsg7"
+        android:layout_width="401dp"
+        android:layout_height="127dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="340dp"
+        android:gravity="center"
+        android:text="@string/still_4309"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lecHallMsg6"
+        android:layout_width="401dp"
+        android:layout_height="127dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="340dp"
+        android:gravity="center"
+        android:text="@string/lets_head"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lecHallMsg5"
+        android:layout_width="401dp"
+        android:layout_height="127dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="340dp"
+        android:gravity="center"
+        android:text="@string/if_you_are"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lecHallMsg4"
+        android:layout_width="401dp"
+        android:layout_height="127dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="340dp"
+        android:gravity="center"
+        android:text="@string/right_4327"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lecHallMsg3"
+        android:layout_width="401dp"
+        android:layout_height="127dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="340dp"
+        android:gravity="center"
+        android:text="@string/left_4309"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/lecHallMsg2"
         android:layout_width="401dp"
         android:layout_height="127dp"
@@ -18,7 +168,7 @@
         android:gravity="center"
         android:text="@string/you_have"
         android:textColor="@android:color/white"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -86,8 +236,6 @@
         android:id="@+id/lecHallStartMsg"
         android:layout_width="401dp"
         android:layout_height="127dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
         android:layout_marginTop="340dp"
         android:gravity="center"
         android:text="@string/outside_lec_hall"
